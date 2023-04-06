@@ -11,7 +11,15 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/home.vue'),
+    component: () => import('@/views/Home.vue'),
+    meta: {
+      title: 'Home',
+    },
+  },
+  {
+    path: '/wordcloud',
+    name: 'wordcloud',
+    component: () => import('@/views/WordCloud.vue'),
     meta: {
       title: 'Home',
     },
@@ -20,14 +28,6 @@ const routes: RouteRecordRaw[] = [
     path: '/test',
     name: 'test',
     component: () => import('@/views/test.vue'),
-    meta: {
-      title: 'Test',
-    },
-  },
-  {
-    path: '/test1',
-    name: 'test1',
-    component: () => import('@/views/test1.vue'),
     meta: {
       title: 'Test',
     },

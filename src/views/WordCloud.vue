@@ -4,13 +4,11 @@ import { defineComponent, onMounted } from 'vue'
 
 import WordCloud from '@/components/WordCloud/index.vue'
 import EchartsWord from '@/components/EchartsWord/index.vue'
-import TimeLine from '@/components/TimeLine/index.vue'
 
 export default defineComponent({
   components: {
     WordCloud,
     EchartsWord,
-    TimeLine,
   },
   setup(props, context) {
     // 在这里声明数据，或者编写函数并在这里执行它
@@ -31,15 +29,28 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="test">
-    <time-line></time-line>
+  <div class="wordcloud-container">
+    <div class="wordcloud-header">
+      <div class="wordcloud-header-img">
+        <img src="@/assets/img/20people.jpg" alt="20届全国人大" />
+      </div>
+    </div>
+    <WordCloud />
+    <EchartsWord />
   </div>
 </template>
 
 <style lang="less">
-.test {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+.wordcloud-container {
+  margin-top: 64px;
+
+  .wordcloud-header {
+    .wordcloud-header-img {
+      text-align: center;
+      img {
+        margin: 0 auto;
+      }
+    }
+  }
 }
 </style>

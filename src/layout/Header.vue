@@ -26,21 +26,18 @@ export default defineComponent({
 <template>
   <div class="home_header_container">
     <ul class="home_nav_contianer">
-      <a href="" class="home_nav_item">
+      <router-link to="/" class="home_nav_item">
+        <li>首页</li>
+      </router-link>
+      <router-link to="/wordcloud" class="home_nav_item">
+        <li>词云</li>
+      </router-link>
+      <router-link to="" class="home_nav_item">
         <li>可视化</li>
-      </a>
-      <a href="" class="home_nav_item">
+      </router-link>
+      <router-link to="" class="home_nav_item">
         <li>可视化</li>
-      </a>
-      <a href="" class="home_nav_item">
-        <li>可视化</li>
-      </a>
-      <a href="" class="home_nav_item">
-        <li>可视化</li>
-      </a>
-      <a href="" class="home_nav_item">
-        <li>可视化</li>
-      </a>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -51,7 +48,7 @@ export default defineComponent({
   height: calc(var(--w-space-sm) * 4);
   z-index: 10;
   top: 0px;
-  left: calc((100% - (var(--w-space-lg) * 10 + 72px * 5)) / 2);
+  left: calc((100% - 496px) / 2);
 
   .home_nav_contianer {
     display: flex;

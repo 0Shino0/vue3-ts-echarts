@@ -4,7 +4,8 @@ import App from '@/App.vue'
 import router from '@/router'
 
 // 引入echarts
-import * as echarts from 'echarts';
+// import * as echarts from 'echarts';
+// import 'echarts-wordcloud'; // 词云图
 
 // 全局样式
 import '@/styles/var.less'
@@ -13,7 +14,7 @@ import '@/styles/global.less'
 
 const app = createApp(App)
 // 全局组件
-app.provide('$echarts', echarts)
+// app.provide('$echarts', echarts)
 
 // 全局方法
 
