@@ -32,11 +32,17 @@ export default defineComponent({
       <router-link to="/wordcloud" class="home_nav_item">
         <li>词云</li>
       </router-link>
-      <router-link to="" class="home_nav_item">
-        <li>可视化</li>
+      <router-link to="/timeline" class="home_nav_item">
+        <li>时间轴</li>
       </router-link>
-      <router-link to="" class="home_nav_item">
-        <li>可视化</li>
+      <router-link to="/population" class="home_nav_item">
+        <li>人口规模</li>
+      </router-link>
+      <router-link to="/poverty" class="home_nav_item">
+        <li>脱贫致富</li>
+      </router-link>
+      <router-link to="/civilization" class="home_nav_item">
+        <li>精神文明</li>
       </router-link>
     </ul>
   </div>
@@ -48,7 +54,7 @@ export default defineComponent({
   height: calc(var(--w-space-sm) * 4);
   z-index: 10;
   top: 0px;
-  left: calc((100% - 496px) / 2);
+  left: calc((100% - 840px) / 2);
 
   .home_nav_contianer {
     display: flex;

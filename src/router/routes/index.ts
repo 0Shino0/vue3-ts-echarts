@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: () => import('@/views/Home.vue'),
     meta: {
-      title: 'Home',
+      title: '首页',
     },
   },
   {
@@ -21,7 +21,39 @@ const routes: RouteRecordRaw[] = [
     name: 'wordcloud',
     component: () => import('@/views/WordCloud.vue'),
     meta: {
-      title: 'Home',
+      title: '词云',
+    },
+  },
+  {
+    path: '/timeline',
+    name: 'timeline',
+    component: () => import('@/views/TimeLine.vue'),
+    meta: {
+      title: '时间轴',
+    },
+  },
+  {
+    path: '/population',
+    name: 'population',
+    component: () => import('@/views/Population.vue'),
+    meta: {
+      title: '人口规模',
+    },
+  },
+  {
+    path: '/poverty',
+    name: 'poverty',
+    component: () => import('@/views/Poverty/index.vue'),
+    meta: {
+      title: '脱贫致富',
+    },
+  },
+  {
+    path: '/civilization',
+    name: 'civilization',
+    component: () => import('@/views/Civilization/index.vue'),
+    meta: {
+      title: '物质精神文明',
     },
   },
   {

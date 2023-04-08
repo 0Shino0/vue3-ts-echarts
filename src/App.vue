@@ -23,7 +23,7 @@ watchResize(() => {
 #app {
   position: relative;
   width: 100%;
-  // min-height: 1000px;
+  min-height: 800px;
   // background: url(../../assets/img/bg-main.png);
   // background: url(../../assets/img/endless-constellation.png);
   background-color: #330033;
