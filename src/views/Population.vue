@@ -78,6 +78,7 @@ export default defineComponent({
       let option = {
         title: {
           text: '中国人口对比',
+          subtext: '数据来源维基百科',
         },
         tooltip: {
           trigger: 'axis',

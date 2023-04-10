@@ -57,6 +57,32 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
+    path: '/nature',
+    name: 'nature',
+    component: () => import('@/views/Nature/index.vue'),
+    meta: {
+      title: '人与自然和谐相处',
+    },
+  },
+  {
+    // path: '/province/:name/:pinying',
+    path: '/province/:name',
+    name: 'province',
+    component: () => import('@/views/ProvinceChart/index.vue'),
+    meta: {
+      title: '省内地图',
+    },
+  },
+  {
+    // path: '/province/:name/:pinying',
+    path: '/peace',
+    name: 'peace',
+    component: () => import('@/views/Peace/index.vue'),
+    meta: {
+      title: '和平发展',
+    },
+  },
+  {
     path: '/test',
     name: 'test',
     component: () => import('@/views/test.vue'),
