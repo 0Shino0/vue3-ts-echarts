@@ -49,10 +49,10 @@ export default defineComponent({
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(doughnutCharts.value)
-        doughnutCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(doughnutCharts.value)
+      //   doughnutCharts.value.resize()
+      // }
       const windowOnresizeProvertyEvent = () => {
         if (doughnutCharts.value) doughnutCharts.value.resize()
       }

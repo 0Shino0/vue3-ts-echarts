@@ -87,6 +87,7 @@ export default defineComponent({
         animationDurationUpdate: 300,
         animationEasingUpdate: 'cubicOut',
         animationDelayUpdate: 0,
+
         series: [
           {
             type: 'line',
@@ -156,6 +157,7 @@ export default defineComponent({
           show: true,
           trigger: 'item',
           triggerOn: 'mousemove|click',
+          formatter: '{a} <br/> {c} 万次',
           axisPointer: {
             type: 'line',
           },

@@ -111,6 +111,9 @@ export default defineComponent({
             axisPointer: {
               type: 'shadow',
             },
+            splitLine: {
+              show: false, // 删除网格线
+            },
           },
         ],
         yAxis: [
@@ -122,6 +125,9 @@ export default defineComponent({
             interval: 1000,
             axisLabel: {
               formatter: '{value} ',
+            },
+            splitLine: {
+              show: false, // 删除网格线
             },
           },
           {

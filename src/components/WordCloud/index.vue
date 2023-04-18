@@ -195,7 +195,7 @@ export default defineComponent({
   <div class="wordcloud-wrap">
     <div class="wid_1820">
       <div class="content" style="overflow: auto">
-        <img class="guang" src="@/assets/img/title.png" />
+        <!-- <img class="guang" src="@/assets/img/title.png" /> -->
         <div class="tagBall" ref="paper">
           <div class="wordcloud-tag-title">
             <h1>二十大报告——3D词云</h1>
@@ -295,8 +295,8 @@ export default defineComponent({
 // 标题
 .wordcloud-tag-title {
   h1 {
+    color: var(--c-title-big-theme);
     text-align: center;
-    color: #fff;
   }
 }
 
@@ -426,7 +426,8 @@ body {
   font-size: 18px;
 }
 .content {
-  border: 1px solid #081f5a;
+  // border: 1px solid #081f5a;
+  border: 1px solid red;
   min-height: 860px;
   position: relative;
 }

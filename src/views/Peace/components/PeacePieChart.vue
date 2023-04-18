@@ -180,7 +180,7 @@ export default defineComponent({
                 value: 2149,
               },
             ],
-            radius: ['80%', '90%'],
+            radius: ['70%', '80%'],
             center: ['50%', '50%'],
             label: {
               show: true,
@@ -226,8 +226,10 @@ export default defineComponent({
             selected: {},
             show: true,
             left: '2%',
-            top: '15%',
-            orient: 'vertical',
+            top: '-1%',
+            // top: '15%',
+            // orient: 'vertical',
+            orient: 'horizontal',
             padding: 5,
             itemGap: 10,
             itemWidth: 25,
@@ -250,6 +252,7 @@ export default defineComponent({
           },
           borderWidth: 0,
           padding: 5,
+          formatter: '{b}: {c} 万米',
         },
         xAxis: [
           {
@@ -317,6 +320,7 @@ export default defineComponent({
           {
             text: '中国对外援助修建的铁路',
             x: 'center',
+            top: '2%',
             padding: 5,
             itemGap: 10,
           },
@@ -347,7 +351,6 @@ export default defineComponent({
         ],
         // "color": []
       }
-
       PeacePieCharts.value.setOption(option)
     }
 

@@ -280,7 +280,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="provinceDoughnutCharts" style="width: 350px; height: 100%">
+  <div class="provinceDoughnutCharts" style="width: 100%; height: 100%">
     <div class="provinceDoughnutCharts-left" ref="chartLeft"></div>
     <div class="provinceDoughnutCharts-right" ref="chartRight"></div>
   </div>

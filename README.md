@@ -21,11 +21,11 @@ npm create preset
 - 人口规模
 ![人口规模](https://shinoimg.yyshino.top/img/202304101958789.png)
 
-- 脱贫致富
-![脱贫致富](https://shinoimg.yyshino.top/img/202304101958790.png)
+- 共同富裕
+![共同富裕](https://shinoimg.yyshino.top/img/202304101958790.png)
 
-- 精神文明
-![精神文明](https://shinoimg.yyshino.top/img/202304101958784.png)
+- 物质文明与精神文明
+![物质文明与精神文明](https://shinoimg.yyshino.top/img/202304101958784.png)
 
 - 人与自然
 ![人与自然1](https://shinoimg.yyshino.top/img/202304101958787.png)

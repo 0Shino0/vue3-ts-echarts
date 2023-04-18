@@ -87,7 +87,7 @@ export default defineComponent({
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{b}<br/>{c} (p / km2)',
+          formatter: '{b}<br/>{c} 万人',
         },
         toolbox: {
           show: true,
@@ -113,19 +113,19 @@ export default defineComponent({
         },
         series: [
           {
-            name: '中国贫困人口人数',
+            name: '各地旅游推荐',
             type: 'map',
             map: 'china',
             label: {
               show: true,
             },
             data: [
-              { name: '西藏', value: 50201 },
-              { name: '新疆', value: 42040 },
-              { name: '云南', value: 32040 },
-              { name: '贵州', value: 32040 },
+              { name: '西藏', value: 41201 },
+              { name: '新疆', value: 2040 },
+              { name: '云南', value: 2040 },
+              { name: '贵州', value: 2040 },
               { name: '青海', value: 22040 },
-              { name: '广西', value: 22040 },
+              { name: '广西', value: 2040 },
               { name: '甘肃', value: 6100 },
               { name: '陕西', value: 6900 },
               { name: '内蒙古', value: 6500 },
@@ -135,7 +135,27 @@ export default defineComponent({
               { name: '河南', value: 6400 },
               { name: '河北', value: 6500 },
               { name: '重庆', value: 6600 },
-              { name: '黑龙江', value: 6000.48 },
+              { name: '黑龙江', value: 6000 },
+              //
+              { name: '四川', value: 40201 },
+              { name: '宁夏', value: 1000 },
+              { name: '辽宁', value: 1000 },
+              { name: '北京', value: 50201 },
+              { name: '河北', value: 1000 },
+              { name: '天津', value: 1000 },
+              { name: '山东', value: 1000 },
+              { name: '江苏', value: 1000 },
+              { name: '安徽', value: 1000 },
+              { name: '上海', value: 40201 },
+              { name: '浙江', value: 25000 },
+              { name: '江西', value: 1000 },
+              { name: '福建', value: 22000 },
+              { name: '台湾', value: 1000 },
+              { name: '广东', value: 1000 },
+              { name: '澳门', value: 1000 },
+              { name: '香港', value: 1000 },
+              { name: '海南', value: 46000 },
+              { name: '吉林', value: 1000 },
             ],
             // 自定义名称映射
             // nameMap: {

@@ -51,7 +51,7 @@ export default defineComponent({
       //   pieNightingaleCharts.value.resize()
       // }
       const windowOnresizeCivilizationEvent = () => {
-        pieNightingaleCharts.value.resize()
+        if (pieNightingaleCharts.value) pieNightingaleCharts.value.resize()
       }
 
       $bus.on('windowOnresizeCivilization', windowOnresizeCivilizationEvent)
@@ -138,11 +138,11 @@ export default defineComponent({
 </script>
 
 <template>
+  <!-- :class="className" -->
   <div
-    :class="className"
     class="pieNightingalechart-container"
-    :ref="className"
-    :style="{ height: height, width: width }"
+    ref="chart"
+    style="height: 100%; width: 100%"
   />
 </template>
 

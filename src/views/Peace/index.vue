@@ -53,17 +53,23 @@ export default defineComponent({
 
 <template>
   <div class="nature-container" style="width: 100%">
-    <div class="peace-peacebar-container" style="width: 100%; height: 700px">
+    <div class="peace-peacebar-container" style="width: 100vw; height: 40vw">
+      <!-- height: 700px -->
       <peace-bar-chart></peace-bar-chart>
     </div>
-    <div class="peace-peaceline-container" style="width: 100%; height: 700px">
+    <div class="peace-peaceline-container" style="width: 100vw; height: 40vw">
+      <!-- height: 700px -->
       <peace-line-chart></peace-line-chart>
     </div>
-    <div class="peace-sunburst-container" style="width: 100%; height: 700px">
-      <peace-sunburst-chart></peace-sunburst-chart>
-    </div>
-    <div class="peace-pie-container" style="width: 100%; height: 700px">
-      <peace-pie-chart></peace-pie-chart>
+    <div class="peace-footer">
+      <div class="peace-sunburst-container" style="width: 100vw; height: 40vw">
+        <!-- height: 700px -->
+        <peace-sunburst-chart></peace-sunburst-chart>
+      </div>
+      <div class="peace-pie-container" style="width: 100vw; height: 40vw">
+        <!-- height: 700px -->
+        <peace-pie-chart></peace-pie-chart>
+      </div>
     </div>
   </div>
 </template>
@@ -78,5 +84,11 @@ export default defineComponent({
   //   // position: absolute;
   //   margin-top: 20px;
   // }
+  .peace-footer {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    height: ;
+  }
 }
 </style>

@@ -93,7 +93,7 @@ export default defineComponent({
             name: '\u4e2d\u56fd',
             coordinateSystem: 'polar',
             symbolSize: 4,
-            data: [130.09, 200.36, 210.66, 180.69],
+            data: [100, 130, 120, 150],
             label: {
               show: true,
               position: 'top',
@@ -114,7 +114,7 @@ export default defineComponent({
             name: '\u7f8e\u56fd',
             coordinateSystem: 'polar',
             symbolSize: 4,
-            data: [30.21, 30.53, -1.45, -1.27],
+            data: [10, 0, 3, 5],
             label: {
               show: true,
               position: 'top',
@@ -161,6 +161,7 @@ export default defineComponent({
           },
           borderWidth: 0,
           padding: 5,
+          formatter: '{a}<br/> {b}: 援助了 {c} 个国家',
         },
         radiusAxis: {
           type: 'category',

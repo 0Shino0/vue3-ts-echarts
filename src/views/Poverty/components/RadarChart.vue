@@ -49,10 +49,10 @@ export default defineComponent({
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(radarCharts.value)
-        radarCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(radarCharts.value)
+      //   radarCharts.value.resize()
+      // }
       const windowOnresizeProvertyEvent = () => {
         if (radarCharts.value) radarCharts.value.resize()
       }
@@ -86,10 +86,10 @@ export default defineComponent({
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{b}<br/>{c}',
+          formatter: '{b}<br/>{c}<br/>',
         },
         legend: {
-          data: ['贫困地人均可只配收入', '人均消费支出'],
+          data: ['贫困地人均可支配收入', '人均消费支出'],
         },
         radar: {
           // shape: 'circle',
@@ -107,7 +107,7 @@ export default defineComponent({
             type: 'radar',
             data: [
               {
-                value: [4200, 3000, 20000, 35000, 38000],
+                value: [4200, 10000, 20000, 35000, 38000],
                 name: '贫困地人均可只配收入',
               },
               {

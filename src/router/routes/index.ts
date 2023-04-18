@@ -45,7 +45,7 @@ const routes: RouteRecordRaw[] = [
     name: 'poverty',
     component: () => import('@/views/Poverty/index.vue'),
     meta: {
-      title: '脱贫致富',
+      title: '共同富裕',
     },
   },
   {
@@ -53,7 +53,7 @@ const routes: RouteRecordRaw[] = [
     name: 'civilization',
     component: () => import('@/views/Civilization/index.vue'),
     meta: {
-      title: '物质精神文明',
+      title: '物质文明与精神文明',
     },
   },
   {

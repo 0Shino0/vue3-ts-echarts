@@ -43,10 +43,10 @@ export default defineComponent({
         <li class="home_nav_text">人口规模</li>
       </router-link>
       <router-link to="/poverty" class="home_nav_item">
-        <li class="home_nav_text">脱贫致富</li>
+        <li class="home_nav_text">共同富裕</li>
       </router-link>
       <router-link to="/civilization" class="home_nav_item">
-        <li class="home_nav_text">精神文明</li>
+        <li class="home_nav_text">物质文明与精神文明</li>
       </router-link>
       <router-link to="/nature" class="home_nav_item">
         <li class="home_nav_text">人与自然</li>
@@ -59,12 +59,28 @@ export default defineComponent({
 </template>
 
 <style lang="less">
+/*大型屏幕pc 超大屏*/
+@media screen and (min-width: 1200px) {
+}
+/*1200>=pc>=992 大屏，字体红色，背景黑色*/
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+}
+/*768<=pad<992 中屏，字体黄色，背景红色*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+}
+/*phone<768  小屏，字体黑色，背景蓝色*/
+@media screen and (max-width: 767px) and (min-width: 480px) {
+}
+/* 超小屏，字体黑色，背景蓝色*/
+@media screen and (max-width: 480px) {
+}
+
 .home_header_container {
   position: absolute;
   // height: calc(var(--w-space-sm) * 4);
   z-index: 10;
   top: 0px;
-  left: calc((100% - 1160px) / 2);
+  left: calc((100% - 1039.6px) / 2);
 
   .home_nav_contianer {
     display: flex;
@@ -74,8 +90,10 @@ export default defineComponent({
     padding-left: 0px;
 
     .home_nav_item {
+      flex-shrink: 1;
       // margin-left: 50px;
-      padding: var(--w-space-sm) var(--w-space-lg);
+      // padding: var(--w-space-sm) var(--w-space-lg);
+      padding: var(--w-space-sm) var(--w-space-sm);
       cursor: pointer;
 
       li {
@@ -84,8 +102,13 @@ export default defineComponent({
         font-weight: bold;
       }
 
-      // .home_nav_text {
-      // }
+      .home_nav_text {
+        // color: var(--c-title-big-theme);
+        color: var(--c-title-big-theme);
+        // font-family: 'STXingkai';
+        font-size: 24px;
+        font-family: 'SimSun';
+      }
     }
 
     // .home_nav_item:hover {

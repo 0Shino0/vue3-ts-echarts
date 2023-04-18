@@ -51,7 +51,7 @@ export default defineComponent({
       //   pieCharts.value.resize()
       // }
       const windowOnresizeEvent = () => {
-        pieCharts.value.resize()
+        if (pieCharts.value) pieCharts.value.resize()
       }
 
       $bus.on('windowOnresize', windowOnresizeEvent)
@@ -77,7 +77,7 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '科技经费投入占比',
+          text: '科技现代化',
         },
         legend: {
           top: 'bottom',
@@ -97,23 +97,23 @@ export default defineComponent({
         },
         series: [
           {
-            name: 'Nightingale Chart',
+            name: '科技现代化',
             type: 'pie',
-            // radius: [50, 250],
+            radius: [75, 100],
             center: ['50%', '50%'],
-            roseType: 'area',
+            // roseType: 'area',
             itemStyle: {
               borderRadius: 8,
             },
             data: [
-              { value: 40, name: 'rose 1' },
-              { value: 38, name: 'rose 2' },
-              { value: 32, name: 'rose 3' },
-              { value: 30, name: 'rose 4' },
-              { value: 28, name: 'rose 5' },
-              { value: 26, name: 'rose 6' },
-              { value: 22, name: 'rose 7' },
-              { value: 18, name: 'rose 8' },
+              { value: 452.78, name: '科学技术部' },
+              { value: 315.93, name: '国家自然科学基金委员会' },
+              { value: 102.95, name: '农业农村部' },
+              { value: 93.85, name: '工业和信息化部' },
+              { value: 66.59, name: '国家卫生健康' },
+              { value: 45.0, name: '教育部' },
+              // { value: 22, name: 'rose 7' },
+              // { value: 18, name: 'rose 8' },
             ],
           },
         ],

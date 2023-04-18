@@ -169,6 +169,7 @@ export default defineComponent({
         series: [
           {
             type: 'wordCloud',
+            color: ['#DC2C1C', '#E45331', ' #f59657', '#FF0000', 'red'],
             sizeRange: [4, 150],
             rotationRange: [0, 0],
             gridSize: 0,
@@ -227,6 +228,15 @@ export default defineComponent({
       ref="echartsWordRef"
       style="width: 100%; min-height: 1080px"
     ></div>
+    <!-- 解决国家领土问题 -->
+    <div class="territory taiwan">
+      <p>祖国统一</p>
+    </div>
+    <div class="territory hainai">
+      <p>和平发展</p>
+      <p>和平发展</p>
+      <p>和平发展</p>
+    </div>
   </div>
 </template>
 
@@ -235,7 +245,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   margin: 0;
-  border: 1px solid #081f5a;
+  border: 1px solid red;
   min-height: 860px;
   position: relative;
 
@@ -244,9 +254,37 @@ export default defineComponent({
     text-align: center;
 
     h1 {
-      color: white;
+      color: var(--c-title-big-theme);
+
       margin: 0 auto;
     }
   }
+}
+
+.territory {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  color: red;
+  width: 180px;
+  height: 100px;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  p:first-child {
+    font-size: 28px;
+  }
+}
+
+.taiwan {
+  bottom: 15vw;
+  left: calc((155vw - 100px) / 2);
+}
+.hainai {
+  bottom: 5vw;
+  left: calc((120vw - 100px) / 2);
 }
 </style>

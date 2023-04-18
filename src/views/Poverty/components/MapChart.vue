@@ -49,10 +49,10 @@ export default defineComponent({
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(mapCharts.value)
-        mapCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(mapCharts.value)
+      //   mapCharts.value.resize()
+      // }
       const windowOnresizeProvertyEvent = () => {
         if (mapCharts.value) mapCharts.value.resize()
       }
@@ -87,7 +87,7 @@ export default defineComponent({
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{b}<br/>{c} (p / km2)',
+          formatter: '{b}<br/>{c} 人',
         },
         toolbox: {
           show: true,
@@ -121,21 +121,43 @@ export default defineComponent({
             },
             data: [
               { name: '西藏', value: 50201.34 },
-              { name: '新疆', value: 42040.48 },
-              { name: '云南', value: 32040.48 },
-              { name: '贵州', value: 32040.48 },
-              { name: '青海', value: 22040.48 },
-              { name: '广西', value: 22040.48 },
-              { name: '甘肃', value: 6000.48 },
-              { name: '陕西', value: 6000.48 },
-              { name: '内蒙古', value: 6000.48 },
-              { name: '山西', value: 6000.48 },
-              { name: '湖南', value: 6000.48 },
-              { name: '湖北', value: 6000.48 },
-              { name: '河南', value: 6000.48 },
-              { name: '河北', value: 6000.48 },
-              { name: '重庆', value: 6000.48 },
-              { name: '黑龙江', value: 6000.48 },
+              { name: '新疆', value: 42040 },
+              { name: '云南', value: 32040 },
+              { name: '贵州', value: 32040 },
+              { name: '青海', value: 22040 },
+              { name: '广西', value: 22040 },
+              { name: '甘肃', value: 6000 },
+              { name: '陕西', value: 6000 },
+              { name: '内蒙古', value: 6000 },
+              { name: '山西', value: 6000 },
+              { name: '湖南', value: 6000 },
+              { name: '湖北', value: 6000 },
+              { name: '河南', value: 6000 },
+              { name: '河北', value: 6000 },
+              { name: '重庆', value: 6000 },
+              { name: '黑龙江', value: 6000 },
+              // d
+              { name: '四川', value: 1900 },
+              { name: '宁夏', value: 1400 },
+              { name: '辽宁', value: 1900 },
+              { name: '北京', value: 1400 },
+              { name: '河北', value: 1400 },
+              { name: '天津', value: 1900 },
+              { name: '山东', value: 1800 },
+              { name: '江苏', value: 1600 },
+              { name: '安徽', value: 1400 },
+              { name: '上海', value: 2000 },
+              { name: '浙江', value: 1400 },
+              { name: '江西', value: 1010 },
+              { name: '福建', value: 1400 },
+              { name: '台湾', value: 1600 },
+              { name: '广东', value: 1100 },
+              { name: '澳门', value: 1000 },
+              { name: '香港', value: 2000 },
+              { name: '海南', value: 1050 },
+              { name: '吉林', value: 1234 },
+              { name: '十段线', value: 1000 },
+              { name: '南海诸岛', value: 1000 },
             ],
             // 自定义名称映射
             // nameMap: {

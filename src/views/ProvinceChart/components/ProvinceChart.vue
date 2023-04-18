@@ -64,9 +64,9 @@ export default defineComponent({
       //   provinceCharts.value.resize()
       // }
       const windowOnresizeProvinceEvent = () => {
-        // if (provinceCharts.value) {
-        provinceCharts.value.resize()
-        // }
+        if (provinceCharts.value) {
+          provinceCharts.value.resize()
+        }
       }
 
       $bus.on('windowOnresizeProvince', windowOnresizeProvinceEvent)

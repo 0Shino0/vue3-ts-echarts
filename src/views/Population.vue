@@ -11,6 +11,7 @@ import {
 
 import * as echarts from 'echarts'
 import $bus from '@/libs/eventBus'
+import BarChart from '@/components/BarChart/index.vue'
 
 export default defineComponent({
   props: {
@@ -34,6 +35,9 @@ export default defineComponent({
       type: Object,
       required: false,
     },
+  },
+  components: {
+    BarChart,
   },
   setup(props, context) {
     // 在这里声明数据，或者编写函数并在这里执行它
@@ -260,6 +264,10 @@ export default defineComponent({
         ref="chart"
         style="width: 100%; height: 100%"
       ></div>
+    </div>
+
+    <div class="timeline-echarts-item">
+      <bar-chart></bar-chart>
     </div>
   </div>
 </template>

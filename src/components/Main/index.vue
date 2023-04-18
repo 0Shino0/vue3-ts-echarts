@@ -29,37 +29,38 @@ export default defineComponent({
       <!-- 全屏背景动画 -->
       <div class="center">
         <h1 class="title title-big">
-          <br /><br />
-          中 国 式 现 代 化 <br />数据可视化设计<br />
+          <!-- <br /> -->
+          <br />
+          中国式现代化发展数据可视化<br />
         </h1>
 
-        <a href="#0" class="btn-arrow-down to-second centered">
+        <a href="javascript:;" class="btn-arrow-down to-second centered">
           <span class="arrow-down-p1"> </span>
           <span class="arrow-down-p2"> </span>
           <span class="arrow-down-p3"> </span>
         </a>
 
-        <div class="tiny-stars">
+        <!-- <div class="tiny-stars">
           <img src="@/assets/svg/stars2.svg" alt="" />
         </div>
 
         <div class="tiny-stars middle-stars">
           <img src="@/assets/svg/stars3.svg" alt="" />
-        </div>
+        </div> -->
 
-        <div class="planet-big centered">
+        <!-- <div class="planet-big centered">
           <span class="round round-1"></span>
           <span class="round round-2"></span>
           <span class="round round-3"></span>
           <span class="round round-4"></span>
           <span class="round round-5"></span>
-        </div>
+        </div> -->
 
         <div class="planet-big-content centered screen-1">
-          <h2>
-            中 国 式 现 代 化 <br />
+          <!-- <h2>
+            中 国 式 现 代 化 &nbsp;
             <span class="title-cursive"> ——数据可视化设计 </span>
-          </h2>
+          </h2> -->
           <!-- <h4 class="title title-small">
             碳中和，指产生人类生产生活产生的二氧化碳或温室气体排放总量
           </h4>
@@ -67,18 +68,28 @@ export default defineComponent({
             通过自然或人工手段实现正负抵消，达到零排放
           </h4> -->
           <p class="text">
-            在新中国成立特别是改革开放以来长期探索和实践基础上，经过十八大以来在理论和实践上的创新突破，我们党成功推进和拓展了中国式现代化。中国式现代化既有各国现代化的共同特征，更基于自己国情的中国特色，是人口规模巨大的现代化，全体人民共同富裕的现代化，物质文明和精神文明相协调的现代化，人与自然和谐共生的现代化，走和平发展道路的现代化。在现阶段时代背景下，中国式现代化更是时政热点之一。
+            <!-- 在新中国成立特别是改革开放以来长期探索和实践基础上，经过十八大以来在理论和实践上的创新突破，我们党成功推进和拓展了中国式现代化。 -->
+            中国式现代化是中国共产党领导的社会主义现代化。中国式现代化既有各国现代化的共同特征，更基于自己国情的中国特色，是人口规模巨大的现代化，全体人民共同富裕的现代化，物质文明和精神文明相协调的现代化，人与自然和谐共生的现代化，走和平发展道路的现代化。
+            <!-- 在现阶段时代背景下，中国式现代化更是时政热点之一。 -->
           </p>
         </div>
 
-        <img src="@/assets/img/planet-1.png" alt="" class="abs planet-1" />
+        <!-- <img src="@/assets/img/bg-bird-1.png" alt="" class="abs planet-1" /> -->
 
-        <img src="@/assets/img/moon.png" alt="" class="abs moon" />
+        <!-- <img src="@/assets/img/moon.png" alt="" class="abs moon" /> -->
+        <!-- <img src="@/assets/svg/china.svg" alt="" class="abs moon" /> -->
       </div>
     </div>
 
-    <canvas id="bg-stars" class="bg-stars"></canvas>
+    <!-- <canvas id="bg-stars" class="bg-stars"></canvas> -->
+    <!-- <div class="main-footer-svg">
+      <img src="@/assets/svg/tiananmen.svg" alt="天安门" />
+    </div> -->
   </div>
+  <!-- 底部图片 -->
+  <!-- <div class="img-footer">
+    <img src="@/assets/img/bg-shanghai0.png" alt="" />
+  </div> -->
 </template>
 
 <style lang="less">
@@ -86,7 +97,7 @@ html,
 body {
   width: 100%;
   min-width: 1280px;
-  height: 100%;
+  // height: 100%;
   font-size: 14px;
   font-family: Arial, sans-serif;
   background-color: #041527;
@@ -147,10 +158,24 @@ ul {
 .hidden {
   display: none;
 }
+
+// 设置字体
+//
+.planet-big-content .text {
+  // font-family: 'STXinwei';
+  font-family: 'SimSun';
+  font-size: 18px;
+  // color: #000;
+  color: var(--c-title-big-theme);
+  text-align: start;
+}
+
 .page-wrapper {
   position: relative;
   width: 100%;
-  min-height: 2000px;
+  height: 47vw;
+  overflow: hidden;
+  // min-height: 2000px;
   // background: url(../../assets/img/bg-main.png);
   // background: url(../../assets/img/endless-constellation.png);
   overflow: hidden;
@@ -161,7 +186,8 @@ ul {
   width: calc(100% - 30px);
   max-width: 1600px;
   margin: 0 auto;
-  padding-top: 30px;
+  // padding-top: 30px;
+  padding-top: 140px;
   z-index: 3;
 }
 img {
@@ -192,6 +218,7 @@ img {
   font-size: 18px;
   margin: 20px 0 0;
 }
+
 @media (min-width: 1351px) and (max-width: 1520px) {
   .title-smaller {
     font-size: 16px;
@@ -217,11 +244,19 @@ img {
   }
 }
 .title-big {
-  color: #00c6ff;
-  font-size: 70px;
-  line-height: 70px;
+  color: var(--c-title-big-theme);
+  // font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
+  line-height: 65px;
   font-weight: normal;
-  font-family: 'Open Sans', Arial, sans-serif;
+  // font-family: 'Open Sans', Arial, sans-serif;
+  // font-family: '夏行楷';
+  font-family: 'SimSun';
+  // font-family: '华文行楷';
+  // font-family: 'STXingkai';
 }
 .title-big span {
   display: block;
@@ -564,107 +599,126 @@ img {
   z-index: 10;
 }
 
-.btn-arrow-down .arrow-down-p1,
-.btn-arrow-down .arrow-down-p2,
-.btn-arrow-down .arrow-down-p3 {
-  width: 58px;
-  height: 41px;
-  position: absolute;
-  display: inline-block;
-  opacity: 0;
-}
+// .btn-arrow-down .arrow-down-p1,
+// .btn-arrow-down .arrow-down-p2,
+// .btn-arrow-down .arrow-down-p3 {
+//   width: 58px;
+//   height: 41px;
+//   position: absolute;
+//   display: inline-block;
+//   opacity: 0;
+// }
 
-.btn-arrow-down .arrow-down-p1 {
-  background: url('../../assets/img/arrow-down-1.png') center 0 no-repeat;
-  -webkit-animation: blinker 3s linear infinite;
-  -moz-animation: blinker 3s linear infinite;
-  animation: blinker 3s linear infinite;
-}
+// .btn-arrow-down .arrow-down-p1 {
+//   background: url('../../assets/img/arrow-down-1.png') center 0 no-repeat;
+//   -webkit-animation: blinker 3s linear infinite;
+//   -moz-animation: blinker 3s linear infinite;
+//   animation: blinker 3s linear infinite;
+// }
 
-.btn-arrow-down .arrow-down-p2 {
-  background: url('../../assets/img/arrow-down-2.png') center 16px no-repeat;
-  -webkit-animation: blinker 3s linear infinite;
-  -moz-animation: blinker 3s linear infinite;
-  animation: blinker 3s linear infinite;
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
+// .btn-arrow-down .arrow-down-p2 {
+//   background: url('../../assets/img/arrow-down-2.png') center 16px no-repeat;
+//   -webkit-animation: blinker 3s linear infinite;
+//   -moz-animation: blinker 3s linear infinite;
+//   animation: blinker 3s linear infinite;
+//   -webkit-animation-delay: 0.1s;
+//   animation-delay: 0.1s;
+// }
 
-.btn-arrow-down .arrow-down-p3 {
-  background: url('../../assets/img/arrow-down-3.png') center 31px no-repeat;
-  -webkit-animation: blinker 3s linear infinite;
-  -moz-animation: blinker 3s linear infinite;
-  animation: blinker 3s linear infinite;
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
+// .btn-arrow-down .arrow-down-p3 {
+//   background: url('../../assets/img/arrow-down-3.png') center 31px no-repeat;
+//   -webkit-animation: blinker 3s linear infinite;
+//   -moz-animation: blinker 3s linear infinite;
+//   animation: blinker 3s linear infinite;
+//   -webkit-animation-delay: 0.2s;
+//   animation-delay: 0.2s;
+// }
 
-@-moz-keyframes blinker {
-  0% {
-    opacity: 0;
-  }
+// @-moz-keyframes blinker {
+//   0% {
+//     opacity: 0;
+//   }
 
-  50% {
-    opacity: 1;
-  }
+//   50% {
+//     opacity: 1;
+//   }
 
-  100% {
-    opacity: 0;
-  }
-}
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
-@-webkit-keyframes blinker {
-  0% {
-    opacity: 0;
-  }
+// @-webkit-keyframes blinker {
+//   0% {
+//     opacity: 0;
+//   }
 
-  50% {
-    opacity: 1;
-  }
+//   50% {
+//     opacity: 1;
+//   }
 
-  100% {
-    opacity: 0;
-  }
-}
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
-@keyframes blinker {
-  0% {
-    opacity: 0;
-  }
+// @keyframes blinker {
+//   0% {
+//     opacity: 0;
+//   }
 
-  50% {
-    opacity: 1;
-  }
+//   50% {
+//     opacity: 1;
+//   }
 
-  100% {
-    opacity: 0;
-  }
-}
+//   100% {
+//     opacity: 0;
+//   }
+// }
 
 .planet-big {
   z-index: 2;
   position: relative;
   vertical-align: middle;
-  width: 944px;
-  height: 944px;
-  margin-top: 115px;
-  background-image: url(../../assets/img/planet-big-with-orbits.png);
+  // width: 944px;
+  // height: 944px;
+  width: 50vw;
+  height: 50vw;
+  // margin-top: 115px;
+  // margin-top: 7%;
+  background-image: url(../../assets/img/planet-big-with-orbits.png),
+    linear-gradient(to left bottom, #fefbf2, #f6d9ae, #f59657, #d5110d);
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+  // 图片颜色改变
+  background-blend-mode: lighten;
+  border-radius: 50%;
+  // 透明度
+  opacity: 0.5;
+  filter: alpha(opacity=40); /*  IE8 及其更早版本 */
+  z-index: 10;
+  // background-size: cover;
 }
 
 .planet-big-content {
   z-index: 100;
   position: absolute;
-  top: 500px;
-  left: 50%;
-  margin-left: -472px;
-  width: 944px;
-  height: 700px;
+  // top: 500px;
+  // top: 180px;
+  top: 10vw;
+  // left: 50%;
+  // margin-left: -472px;
+  // width: 944px;
+  width: 100vw;
+  // height: 700px;
   padding-top: 150px;
   text-align: center;
   vertical-align: middle;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .planet-big-content h2 {
@@ -679,8 +733,10 @@ img {
 }
 
 .planet-big-content p {
-  width: 440px;
-  margin: 0 auto 60px;
+  // width: 440px;
+  width: 80vw;
+  margin: 0 212px 60px;
+  margin-top: 230px;
 }
 
 .abs {
@@ -705,12 +761,13 @@ img {
 
 .planet-1 {
   top: 420px;
-  left: 15%;
+  left: 8%;
 }
 
 .moon {
   top: 160px;
-  right: 80px;
+  right: 60px;
+  width: 300px;
 }
 
 canvas {
@@ -1346,24 +1403,41 @@ canvas {
 
 .tiny-stars {
   position: absolute;
-  top: 390px;
-  left: 50%;
-  margin-left: -528px;
-  z-index: 1;
+  // top: 350px;
+  // top: 0px;
+  top: 15vw;
+  left: 28vw;
+  // margin-left: -528px;
+  opacity: 0.5;
+  z-index: 0;
   -webkit-animation: infinite-spinning 40s infinite linear;
   -moz-animation: infinite-spinning 40s infinite linear;
   -o-animation: infinite-spinning 40s infinite linear;
   animation: infinite-spinning 40s infinite linear;
-}
 
-@media (max-width: 1440px) {
-  .tiny-stars {
-    top: 545px;
+  img {
+    width: 50vw;
+    height: 50vw;
   }
 }
 
+@media (max-width: 1440px) {
+  center .tiny-stars {
+    top: 20vw;
+  }
+}
+
+// @media (max-width: 1440px) {
+//   .tiny-stars {
+//     top: 545px;
+//   }
+// }
+
 .middle-stars {
-  margin-left: -538px;
+  // margin-left: -538px;
+  margin-left: -20vw;
+  top: 15vw;
+  left: 43vw;
   -webkit-animation: infinite-spinning 30s infinite linear;
   -moz-animation: infinite-spinning 30s infinite linear;
   -o-animation: infinite-spinning 30s infinite linear;
@@ -1414,5 +1488,27 @@ canvas {
   line-height: 1;
   text-align: right;
   color: rgba(255, 255, 255, 0.19999999999999996);
+}
+
+.main-footer-svg {
+  img {
+    width: 100%;
+    // height: 100%;
+    position: absolute;
+    // bottom: -7vw;
+    top: -15vw;
+  }
+}
+
+// 底部图片
+.img-footer {
+  position: absolute;
+  top: -150px;
+  left: 0;
+  z-index: -1;
+  img {
+    // height: 300px;
+    width: 100vw;
+  }
 }
 </style>

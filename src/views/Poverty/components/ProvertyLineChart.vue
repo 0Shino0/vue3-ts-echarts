@@ -49,10 +49,10 @@ export default defineComponent({
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(provertyLineCharts.value)
-        provertyLineCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(provertyLineCharts.value)
+      //   provertyLineCharts.value.resize()
+      // }
       const windowOnresizeProvertyEvent = () => {
         if (provertyLineCharts.value) provertyLineCharts.value.resize()
       }

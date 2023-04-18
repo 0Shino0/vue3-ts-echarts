@@ -44,19 +44,20 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="proverty-container" style="width: 100%; height: 600px">
-    <div class="proverty-map-container" style="width: 100%; height: 600px">
+  <div class="proverty-container" style="width: 100%; height: 50vw">
+    <div class="proverty-map-container" style="width: 100vw; height: 44vw">
       <map-chart></map-chart>
     </div>
+
     <div class="proverty-barchart-container">
       <proverty-bar-chart></proverty-bar-chart>
     </div>
     <div class="proverty-radar-container proverty-chart-item">
       <radar-chart></radar-chart>
     </div>
-    <div class="proverty-radar-container proverty-chart-item">
+    <!-- <div class="proverty-radar-container proverty-chart-item">
       <radar-chart></radar-chart>
-    </div>
+    </div> -->
     <div class="proverty-line-chart proverty-chart-item">
       <proverty-line-chart></proverty-line-chart>
     </div>
@@ -74,6 +75,8 @@ export default defineComponent({
 
   .proverty-map-container {
     position: absolute;
+    top: 5vw;
+    // height: 600px;
   }
 
   .proverty-barchart-container {
@@ -81,29 +84,35 @@ export default defineComponent({
     height: 20vw;
     position: absolute;
     top: 50px;
-    left: 30px;
+    // left: 30px;
+    left: -1px;
   }
 
   .proverty-radar-container {
     width: 28vw;
     height: 20vw;
     position: absolute;
-    top: 320px;
-    left: 30px;
+    // top: 320px;
+    top: 24vw;
+    // left: 30px;
+    left: 0;
   }
   .proverty-line-chart {
     width: 28vw;
     height: 20vw;
     position: absolute;
     top: 50px;
-    right: 30px;
+    // right: 30px;
+    right: -1px;
   }
   .proverty-doughut-chart {
     width: 28vw;
     height: 20vw;
     position: absolute;
-    top: 320px;
-    right: 30px;
+    // top: 320px;
+    top: 24vw;
+    // right: 30px;
+    right: 0;
   }
 }
 </style>

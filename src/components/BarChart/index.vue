@@ -79,16 +79,30 @@ export default defineComponent({
       let option = {
         title: {
           text: '人均GDP',
+          subtext: '数据来源维基百科 | 单位百万美元',
         },
         legend: {},
-        tooltip: {},
+        tooltip: {
+          trigger: 'item',
+          formatter: (item: any) => {
+            // console.log(item)
+            return `${item.name}<br/>${item.seriesName}: ${
+              item.data[item.seriesName]
+            } 百万美元`
+          },
+        },
         dataset: {
-          dimensions: ['product', '2015', '2016', '2017'],
+          dimensions: ['product', '2012', '2017', '2022'],
           source: [
-            { product: 'Matcha Latte', 2015: 43.3, 2016: 85.8, 2017: 93.7 },
-            { product: 'Milk Tea', 2015: 83.1, 2016: 73.4, 2017: 55.1 },
-            { product: 'Cheese Cocoa', 2015: 86.4, 2016: 65.2, 2017: 82.5 },
-            { product: 'Walnut Brownie', 2015: 72.4, 2016: 53.9, 2017: 39.1 },
+            {
+              product: '中国',
+              2012: 8570348,
+              2017: 11937562,
+              2022: 18321197,
+            },
+            { product: '美国', 2012: 16155250, 2017: 19362129, 2022: 25035164 },
+            { product: '俄罗斯', 2012: 2170145, 2017: 1469341, 2022: 2133092 },
+            { product: '日本', 2012: 6203213, 2017: 4884489, 2022: 4300621 },
           ],
         },
         xAxis: { type: 'category' },

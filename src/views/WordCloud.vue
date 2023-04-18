@@ -44,6 +44,14 @@ export default defineComponent({
 .wordcloud-container {
   margin-top: 64px;
 
+  background-image: linear-gradient(
+    to left bottom,
+    #fefbf2,
+    #f6d9ae,
+    #f59657,
+    #d5110d
+  );
+
   .wordcloud-header {
     .wordcloud-header-img {
       text-align: center;

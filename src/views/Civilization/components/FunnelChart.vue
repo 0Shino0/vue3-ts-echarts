@@ -48,10 +48,10 @@ export default defineComponent({
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(funnelCharts.value)
-        funnelCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(funnelCharts.value)
+      //   funnelCharts.value.resize()
+      // }
       const windowOnresizeCivilizationEvent = () => {
         if (funnelCharts.value) funnelCharts.value.resize()
       }
@@ -86,78 +86,44 @@ export default defineComponent({
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c}%',
         },
-        toolbox: {
-          feature: {
-            dataView: { readOnly: false },
-            restore: {},
-            saveAsImage: {},
-          },
-        },
         legend: {
           // data: ['国漫', '绘画', '汉服', '书法', '名胜古迹'],
-          top: 'top',
+          top: 'bottom',
           type: 'scroll',
           orient: 'vertical',
           left: '5px',
         },
         series: [
           {
-            name: 'Expected',
+            name: '国风热潮',
             type: 'funnel',
-            left: '10%',
-            color: ['#B22F0C', '#E01F54', '#f89898', '#D05C67', '#C1252F'],
-            width: '80%',
-            label: {
-              formatter: '{b}Expected',
-            },
-            labelLine: {
-              show: false,
-            },
-            itemStyle: {
-              opacity: 0,
-            },
-            emphasis: {
-              label: {
-                position: 'inside',
-                formatter: '{b}Expected: {c}%',
-              },
-            },
-            data: [
-              { value: 60, name: '汉服' },
-              { value: 40, name: '书法' },
-              { value: 20, name: '名胜古迹' },
-              { value: 80, name: '绘画' },
-              { value: 100, name: '国漫' },
-            ],
-          },
-          {
-            name: 'Actual',
-            type: 'funnel',
-            left: '10%',
-            width: '80%',
-            maxSize: '80%',
+            left: '5',
+            width: '100%',
+            color: ['#F5BD8A', '#B22F0C', '#f89898', '#D05C67', '#E01F54'],
+            // width: '80%',
             label: {
               position: 'inside',
               formatter: '{c}%',
-              color: '#fff',
+              // color: '#fff',
             },
             itemStyle: {
-              opacity: 0.5,
-              borderColor: '#fff',
+              // opacity: 0.5,
+              // borderColor: '#fff',
               borderWidth: 2,
             },
+
             emphasis: {
               label: {
                 position: 'inside',
-                formatter: '{b}Actual: {c}%',
+                formatter: '{b}: {c}%',
               },
             },
             data: [
               { value: 30, name: '汉服' },
               { value: 10, name: '书法' },
-              { value: 5, name: '名胜古迹' },
-              { value: 50, name: '绘画' },
-              { value: 80, name: '国漫' },
+              { value: 20, name: '名胜古迹' },
+              { value: 50, name: '各地风俗' },
+              { value: 80, name: '国画' },
             ],
             // Ensure outer shape will not be over inner shape when hover.
             z: 100,

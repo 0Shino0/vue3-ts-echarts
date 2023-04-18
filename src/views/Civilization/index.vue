@@ -40,8 +40,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="civilization-container" style="width: 100%; height: 600px">
-    <div class="civilization-map-container" style="width: 100%; height: 600px">
+  <div class="civilization-container" style="width: 100%; height: 40vw">
+    <div class="civilization-map-container" style="width: 100vw; height: 40vw">
       <map-chart></map-chart>
     </div>
     <div class="civilization-nightingale-container">
@@ -61,22 +61,27 @@ export default defineComponent({
 
   .civilization-map-container {
     position: absolute;
+    // top: 3vw;
   }
 
   .civilization-nightingale-container {
     width: 28vw;
     height: 30vw;
     position: absolute;
-    top: 50px;
-    left: 30px;
+    // top: 50px;
+    top: 5vw;
+    // left: 30px;
+    left: 0;
   }
 
   .civilization-funnel-container {
     width: 28vw;
     height: 30vw;
     position: absolute;
-    top: 50px;
-    right: 30px;
+    // top: 50px;
+    top: 5vw;
+    // right: 30px;
+    right: 0;
   }
 }
 </style>

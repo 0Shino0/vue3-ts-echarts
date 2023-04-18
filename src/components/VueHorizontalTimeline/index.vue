@@ -75,7 +75,7 @@ export default {
     },
     titleSubstr: {
       type: Number,
-      default: 18,
+      default: 38,
     },
     contentAttr: {
       type: String,
@@ -279,6 +279,7 @@ export default {
   font-size: 1rem;
   margin-bottom: 4px;
   overflow: hidden;
+  text-align: left;
 }
 
 .vue-horizontal-timeline .timeline ol {

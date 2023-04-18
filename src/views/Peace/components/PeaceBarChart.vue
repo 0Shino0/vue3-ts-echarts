@@ -10,6 +10,7 @@ import {
 } from 'vue'
 
 import * as echarts from 'echarts'
+import 'echarts-liquidfill' // 水球图
 
 import $bus from '@/libs/eventBus'
 
@@ -41,37 +42,54 @@ export default defineComponent({
     // 在使用 setup 的情况下，请牢记一点：不能再用 this 来获取 Vue 实例
 
     const chart = ref<HTMLElement>()
-    const NatureBarCharts = ref()
+    const peaceBarCharts = ref()
 
+    const liquidfillLeftchart = ref<HTMLElement>()
+    const peaceLiquidfillLeftchart = ref()
+    const liquidfillRightchart = ref<HTMLElement>()
+    const peaceLiquidfillRightchart = ref()
     // 生命周期钩子
     onMounted(() => {
       nextTick(() => {
+        console.log(liquidfillLeftchart.value)
+
+        console.log(liquidfillRightchart.value)
         initChart()
       })
 
-      window.onresize = function () {
-        // console.log(NatureBarCharts.value)
-        NatureBarCharts.value.resize()
-      }
+      // window.onresize = function () {
+      //   // console.log(peaceBarCharts.value)
+      //   peaceBarCharts.value.resize()
+      //   peaceLiquidfillLeftchart.value.resize()
+      //   peaceLiquidfillRightchart.value.resize()
+      // }
       const windowOnresizePeaceEvent = () => {
-        if (NatureBarCharts.value) NatureBarCharts.value.resize()
+        if (peaceBarCharts.value) peaceBarCharts.value.resize()
+        peaceLiquidfillLeftchart.value.resize()
+        peaceLiquidfillRightchart.value.resize()
       }
 
       $bus.on('windowOnresizePeace', windowOnresizePeaceEvent)
     })
 
     onBeforeUnmount(() => {
-      if (!NatureBarCharts.value) {
+      if (!peaceBarCharts.value) {
         return
       }
-      NatureBarCharts.value.dispose()
-      NatureBarCharts.value = null
+      peaceBarCharts.value.dispose()
+      peaceBarCharts.value = null
     })
 
     // 方法 methods
 
     const initChart = () => {
-      NatureBarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      peaceBarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      peaceLiquidfillLeftchart.value = markRaw(
+        echarts.init(liquidfillLeftchart.value!, 'roma')
+      )
+      peaceLiquidfillRightchart.value = markRaw(
+        echarts.init(liquidfillRightchart.value!, 'roma')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -231,6 +249,7 @@ export default defineComponent({
           show: true,
           trigger: 'item',
           triggerOn: 'mousemove|click',
+          formatter: '{a} <br/>{b} : {c} 万次',
           axisPointer: {
             type: 'line',
           },
@@ -310,7 +329,155 @@ export default defineComponent({
         },
       }
 
-      NatureBarCharts.value.setOption(option)
+      let peaceLiquidfillLeftOption = {
+        animation: true,
+        animationThreshold: 2000,
+        animationDuration: 1000,
+        animationEasing: 'cubicOut',
+        animationDelay: 0,
+        animationDurationUpdate: 300,
+        animationEasingUpdate: 'cubicOut',
+        animationDelayUpdate: 0,
+        series: [
+          {
+            type: 'liquidFill',
+            name: '中国对外援助增长率',
+            data: [0.8112, 0.8112],
+            waveAnimation: true,
+            animationDuration: 2000,
+            animationDurationUpdate: 1000,
+            color: ['#294D99', '#156ACF', '#1598ED', '#45BDFF'],
+            shape: 'circle',
+            backgroundStyle: {},
+            outline: {
+              show: false,
+              borderDistance: 8,
+            },
+            label: {
+              show: true,
+              position: 'inside',
+              margin: 8,
+              fontSize: 40,
+              formatter: function (param: any) {
+                return Math.floor(param.value * 10000) / 100 + '%'
+              },
+            },
+          },
+        ],
+        legend: [
+          {
+            data: [],
+            selected: {},
+            show: true,
+            padding: 5,
+            itemGap: 10,
+            itemWidth: 25,
+            itemHeight: 14,
+          },
+        ],
+        tooltip: {
+          show: true,
+          trigger: 'item',
+          triggerOn: 'mousemove|click',
+          axisPointer: {
+            type: 'line',
+          },
+          showContent: true,
+          alwaysShowContent: false,
+          showDelay: 0,
+          hideDelay: 100,
+          textStyle: {
+            fontSize: 14,
+          },
+          borderWidth: 0,
+          padding: 5,
+        },
+        title: [
+          {
+            text: '中国对外援助增长率',
+            left: 'center',
+            padding: 5,
+            itemGap: 10,
+          },
+        ],
+      }
+
+      let peaceLiquidfillRightOption = {
+        animation: true,
+        animationThreshold: 2000,
+        animationDuration: 1000,
+        animationEasing: 'cubicOut',
+        animationDelay: 0,
+        animationDurationUpdate: 300,
+        animationEasingUpdate: 'cubicOut',
+        animationDelayUpdate: 0,
+        series: [
+          {
+            type: 'liquidFill',
+            name: '美国对外援助增长率',
+            data: [0.3013, 0.3013],
+            waveAnimation: true,
+            animationDuration: 2000,
+            animationDurationUpdate: 1000,
+            color: ['#294D99', '#156ACF', '#1598ED', '#45BDFF'],
+            shape: 'circle',
+            backgroundStyle: {},
+            outline: {
+              show: false,
+              borderDistance: 8,
+            },
+            label: {
+              show: true,
+              position: 'inside',
+              margin: 8,
+              fontSize: 40,
+              formatter: function (param: any) {
+                return Math.floor(param.value * 10000) / 100 + '%'
+              },
+            },
+          },
+        ],
+        legend: [
+          {
+            data: [],
+            selected: {},
+            show: true,
+            padding: 5,
+            itemGap: 10,
+            itemWidth: 25,
+            itemHeight: 14,
+          },
+        ],
+        tooltip: {
+          show: true,
+          trigger: 'item',
+          triggerOn: 'mousemove|click',
+          axisPointer: {
+            type: 'line',
+          },
+          showContent: true,
+          alwaysShowContent: false,
+          showDelay: 0,
+          hideDelay: 100,
+          textStyle: {
+            fontSize: 14,
+          },
+          borderWidth: 0,
+          padding: 5,
+        },
+        title: [
+          {
+            text: '美国对外援助增长率',
+            left: 'center',
+            padding: 5,
+            itemGap: 10,
+          },
+        ],
+      }
+
+      peaceBarCharts.value.setOption(option)
+      peaceLiquidfillLeftchart.value.setOption(peaceLiquidfillLeftOption)
+      peaceLiquidfillRightchart.value.setOption(peaceLiquidfillRightOption)
     }
 
     // 计算方法 computed
@@ -320,17 +487,47 @@ export default defineComponent({
     return {
       // 需要给 `<template />` 用的数据或函数，在这里 `return` 出去
       chart,
+      liquidfillLeftchart,
+      liquidfillRightchart,
     }
   },
 })
 </script>
 
 <template>
-  <div
-    class="NatureBarCharts"
-    ref="chart"
-    style="width: 100%; height: 100%"
-  ></div>
+  <div class="peace-bar-chart-container">
+    <div
+      class="peace-liquidfill-charts"
+      ref="liquidfillLeftchart"
+      style="width: 100%; height: 100%"
+    ></div>
+    <div
+      class="peace-bar-charts"
+      ref="chart"
+      style="width: 100%; height: 100%"
+    ></div>
+    <div
+      class="peace-liquidfill-charts"
+      ref="liquidfillRightchart"
+      style="width: 100%; height: 100%"
+    ></div>
+  </div>
 </template>
 
-<style lang="less"></style>
+<style lang="less">
+.peace-bar-chart-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.peace-liquidfill-charts {
+  flex: 0.2;
+}
+.peace-bar-charts {
+  flex: 0.5;
+}
+.peace-liquidfill-charts {
+  flex: 0.2;
+}
+</style>

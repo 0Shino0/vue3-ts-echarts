@@ -265,7 +265,7 @@ export default defineComponent({
   <div
     class="provincebarCharts"
     ref="chart"
-    style="width: 350px; height: 100%"
+    style="width: 100%; height: 100%"
   ></div>
 </template>
 

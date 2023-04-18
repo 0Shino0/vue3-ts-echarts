@@ -52,8 +52,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="nature-container" style="width: 100%; height: 800px">
-    <div class="nature-map-container" style="width: 100%; height: 100%">
+  <div class="nature-container" style="width: 100%; height: 55vw">
+    <div class="nature-map-container" style="width: 100vw; height: 50vw">
       <map-chart></map-chart>
     </div>
     <div class="nature-naturebar-container">
