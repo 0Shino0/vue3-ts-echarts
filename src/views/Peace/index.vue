@@ -9,14 +9,14 @@ import $bus from '@/libs/eventBus'
 //   pinying: string
 // }
 import PeaceBarChart from './components/PeaceBarChart.vue'
-import PeaceLineChart from './components/PeaceLineChart.vue'
+// import PeaceLineChart from './components/PeaceLineChart.vue'
 import PeaceSunburstChart from './components/PeaceSunburstChart.vue'
 import PeacePieChart from './components/PeacePieChart.vue'
 
 export default defineComponent({
   components: {
     PeaceBarChart,
-    PeaceLineChart,
+    // PeaceLineChart,
     PeaceSunburstChart,
     PeacePieChart,
   },
@@ -57,10 +57,9 @@ export default defineComponent({
       <!-- height: 700px -->
       <peace-bar-chart></peace-bar-chart>
     </div>
-    <div class="peace-peaceline-container" style="width: 100vw; height: 40vw">
-      <!-- height: 700px -->
+    <!-- <div class="peace-peaceline-container" style="width: 100vw; height: 40vw">
       <peace-line-chart></peace-line-chart>
-    </div>
+    </div> -->
     <div class="peace-footer">
       <div class="peace-sunburst-container" style="width: 100vw; height: 40vw">
         <!-- height: 700px -->
@@ -76,7 +75,7 @@ export default defineComponent({
 
 <style lang="less">
 .nature-container {
-  margin-top: 64px;
+  // margin-top: 64px;
   background-color: #fefefe;
   position: relative;
 

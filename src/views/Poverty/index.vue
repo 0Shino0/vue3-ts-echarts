@@ -4,9 +4,11 @@ import { defineComponent, onMounted } from 'vue'
 
 import MapChart from './components/MapChart.vue'
 import ProvertyBarChart from './components/ProvertyBarChart.vue'
-import RadarChart from './components/RadarChart.vue'
+// import RadarChart from './components/RadarChart.vue'
+import ProvertyAnnularChart from './components/ProvertyAnnularChart.vue'
 import ProvertyLineChart from './components/ProvertyLineChart.vue'
-import DoughutChart from './components/DoughnutChart.vue'
+// import DoughutChart from './components/DoughnutChart.vue'
+import ProvertyStageGaugeChart from './components/ProvertyStageGaugeChart.vue'
 
 import $bus from '@/libs/eventBus'
 
@@ -14,9 +16,11 @@ export default defineComponent({
   components: {
     MapChart,
     ProvertyBarChart,
-    RadarChart,
+    // RadarChart,
+    ProvertyAnnularChart,
     ProvertyLineChart,
-    DoughutChart,
+    // DoughutChart,
+    ProvertyStageGaugeChart,
   },
   setup(props, context) {
     // 在这里声明数据，或者编写函数并在这里执行它
@@ -53,7 +57,8 @@ export default defineComponent({
       <proverty-bar-chart></proverty-bar-chart>
     </div>
     <div class="proverty-radar-container proverty-chart-item">
-      <radar-chart></radar-chart>
+      <!-- <radar-chart></radar-chart> -->
+      <proverty-annular-chart></proverty-annular-chart>
     </div>
     <!-- <div class="proverty-radar-container proverty-chart-item">
       <radar-chart></radar-chart>
@@ -62,14 +67,15 @@ export default defineComponent({
       <proverty-line-chart></proverty-line-chart>
     </div>
     <div class="proverty-doughut-chart proverty-chart-item">
-      <doughut-chart></doughut-chart>
+      <!-- <doughut-chart></doughut-chart> -->
+      <proverty-stage-gauge-chart></proverty-stage-gauge-chart>
     </div>
   </div>
 </template>
 
 <style lang="less">
 .proverty-container {
-  margin-top: 64px;
+  // margin-top: 64px;
   background-color: #fefefe;
   position: relative;
 

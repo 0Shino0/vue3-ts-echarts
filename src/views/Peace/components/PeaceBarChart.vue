@@ -249,7 +249,7 @@ export default defineComponent({
           show: true,
           trigger: 'item',
           triggerOn: 'mousemove|click',
-          formatter: '{a} <br/>{b} : {c} 万次',
+          formatter: '{a} <br/>{b} : {c} 人民币',
           axisPointer: {
             type: 'line',
           },
@@ -322,8 +322,9 @@ export default defineComponent({
           },
         ],
         title: {
-          text: '世界各国对外援助',
+          text: '世界各国对外援助对比（元）',
           // subtext: '数据来源国家数据',
+          subtext: '数据来源：国家统计局、维基百科',
           x: 'center',
           top: '20px',
         },
@@ -389,12 +390,19 @@ export default defineComponent({
           textStyle: {
             fontSize: 14,
           },
+          formatter: function (param: any) {
+            // console.log(param)
+            return `${param.seriesName}：${
+              Math.floor(param.value * 10000) / 100
+            }%`
+          },
           borderWidth: 0,
           padding: 5,
         },
         title: [
           {
             text: '中国对外援助增长率',
+
             left: 'center',
             padding: 5,
             itemGap: 10,
@@ -464,6 +472,12 @@ export default defineComponent({
           },
           borderWidth: 0,
           padding: 5,
+          formatter: function (param: any) {
+            // console.log(param)
+            return `${param.seriesName}：${
+              Math.floor(param.value * 10000) / 100
+            }%`
+          },
         },
         title: [
           {

@@ -41,7 +41,7 @@ export default defineComponent({
     // 在使用 setup 的情况下，请牢记一点：不能再用 this 来获取 Vue 实例
 
     const chart = ref<HTMLElement>()
-    const provertyLineCharts = ref()
+    const provertyAnnularCharts = ref()
 
     // 生命周期钩子
     onMounted(() => {
@@ -50,28 +50,28 @@ export default defineComponent({
       })
 
       // window.onresize = function () {
-      //   // console.log(provertyLineCharts.value)
-      //   provertyLineCharts.value.resize()
+      //   // console.log(provertyAnnularCharts.value)
+      //   provertyAnnularCharts.value.resize()
       // }
       const windowOnresizeProvertyEvent = () => {
-        if (provertyLineCharts.value) provertyLineCharts.value.resize()
+        if (provertyAnnularCharts.value) provertyAnnularCharts.value.resize()
       }
 
       $bus.on('windowOnresizeProverty', windowOnresizeProvertyEvent)
     })
 
     onBeforeUnmount(() => {
-      if (!provertyLineCharts.value) {
+      if (!provertyAnnularCharts.value) {
         return
       }
-      provertyLineCharts.value.dispose()
-      provertyLineCharts.value = null
+      provertyAnnularCharts.value.dispose()
+      provertyAnnularCharts.value = null
     })
 
     // 方法 methods
 
     const initChart = () => {
-      provertyLineCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      provertyAnnularCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -80,19 +80,15 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '中央财政补助地方专项扶贫资金（亿元）',
-          x: 'center',
-          top: '20px',
-        },
-
-        xAxis: {
-          type: 'category',
-          boundaryGap: false,
-          data: ['2017', '2018', '2019', '2020'],
+          text: '精准扶贫',
+          left: 'center',
         },
         tooltip: {
-          trigger: 'item',
-          formatter: '{b}<br/>{c}',
+          // trigger: `item`
+          formatter: '{a}<br/>{b} : {c}',
+        },
+        legend: {
+          top: 'bottom',
         },
         toolbox: {
           orient: 'vertical',
@@ -105,20 +101,28 @@ export default defineComponent({
             saveAsImage: { show: true },
           },
         },
-        yAxis: {
-          type: 'value',
-        },
         series: [
           {
-            // data: [300, 450, 600, 750, 900],
-            data: [837, 1178, 1226, 1461],
-            type: 'line',
-            areaStyle: {},
+            name: '精准扶贫',
+            type: 'pie',
+            radius: ['40%', '60%'],
+            center: ['50%', '50%'],
+            // roseType: 'area',
+            // itemStyle: {
+            //   borderRadius: 8
+            // },
+            data: [
+              { value: 45.38, name: '就业与异地搬迁' },
+              { value: 19.48, name: '教育扶贫' },
+              { value: 23.38, name: '产业发展' },
+              { value: 11.26, name: '其他' },
+              { value: 0.5, name: '兜底保障' },
+            ],
           },
         ],
       }
 
-      provertyLineCharts.value.setOption(option)
+      provertyAnnularCharts.value.setOption(option)
     }
 
     // 计算方法 computed
@@ -135,7 +139,7 @@ export default defineComponent({
 
 <template>
   <div
-    class="provertyLineCharts"
+    class="provertyAnnularCharts"
     ref="chart"
     style="width: 100%; height: 100%"
   ></div>

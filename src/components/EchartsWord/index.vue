@@ -233,9 +233,9 @@ export default defineComponent({
       <p>祖国统一</p>
     </div>
     <div class="territory hainai">
+      <p>社会主义</p>
       <p>和平发展</p>
-      <p>和平发展</p>
-      <p>和平发展</p>
+      <p>党的领导</p>
     </div>
   </div>
 </template>

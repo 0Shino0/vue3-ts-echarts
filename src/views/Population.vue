@@ -53,6 +53,7 @@ export default defineComponent({
       })
       window.onresize = function () {
         populationLineCharts.value.resize()
+        $bus.emit('windowOnresizePopulation')
       }
       // const windowOnresizeEvent = () => {
       //   populationLineCharts.value.resize()
@@ -82,7 +83,7 @@ export default defineComponent({
       let option = {
         title: {
           text: '中国人口对比',
-          subtext: '数据来源维基百科',
+          subtext: '数据来源联合国统计局',
         },
         tooltip: {
           trigger: 'axis',
@@ -95,12 +96,13 @@ export default defineComponent({
         },
         legend: {
           data: ['德国', '日本', '美国', '中国', '印度', '法国'],
+          left: 'right',
         },
-        toolbox: {
-          feature: {
-            saveAsImage: {},
-          },
-        },
+        // toolbox: {
+        //   feature: {
+        //     saveAsImage: {},
+        //   },
+        // },
         grid: {
           left: '3%',
           right: '4%',
@@ -262,11 +264,11 @@ export default defineComponent({
       <div
         class="population-line-charts"
         ref="chart"
-        style="width: 100%; height: 100%"
+        style="width: 100%; height: 600px"
       ></div>
     </div>
 
-    <div class="timeline-echarts-item">
+    <div class="timeline-echarts-item" style="width: 100%; height: 600px">
       <bar-chart></bar-chart>
     </div>
   </div>
@@ -274,7 +276,7 @@ export default defineComponent({
 
 <style lang="less">
 .population-container {
-  margin-top: 64px;
+  // margin-top: 64px;
   background-color: #fff;
 }
 .pupulation-linecharts-container {

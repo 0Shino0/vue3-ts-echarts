@@ -28,11 +28,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="home_container">
-    <div class="main_container">
-      <Main />
-    </div>
-  </div>
+  <Main />
 </template>
 
 <style lang="less">

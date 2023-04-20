@@ -94,6 +94,9 @@ export default defineComponent({
           },
         },
         toolbox: {
+          orient: 'vertical',
+          left: 'right',
+          top: 'center',
           feature: {
             dataView: { show: true, readOnly: false },
             magicType: { show: true, type: ['line', 'bar'] },
@@ -107,7 +110,18 @@ export default defineComponent({
         xAxis: [
           {
             type: 'category',
-            data: ['2019', '2020', '2021', '2022', '2023'],
+            // data: ['2019', '2020', '2021', '2022', '2023'],
+            data: [
+              '2012',
+              '2013',
+              '2014',
+              '2015',
+              '2016',
+              '2017',
+              '2018',
+              '2019',
+              '2020',
+            ],
             axisPointer: {
               type: 'shadow',
             },
@@ -121,8 +135,8 @@ export default defineComponent({
             type: 'value',
             name: '贫困人口数量',
             min: 0,
-            max: 7000,
-            interval: 1000,
+            max: 12000,
+            interval: 2000,
             axisLabel: {
               formatter: '{value} ',
             },
@@ -133,24 +147,27 @@ export default defineComponent({
           {
             type: 'value',
             name: '贫困百分比',
-            min: 0,
-            max: 8,
-            interval: 1,
+            // min: 0,
+            // max: 8,
+            // interval: 1,
             axisLabel: {
               formatter: '{value} ',
             },
           },
         ],
+        grid: {
+          left: '60px',
+        },
         series: [
           {
-            name: '贫困人口数量',
+            name: '贫困人口数量（万人）',
             type: 'bar',
             tooltip: {
               valueFormatter: function (value: string | number) {
                 return value + ''
               },
             },
-            data: [5600, 5000, 4500, 3500, 2500, 2000, 1500, 1088, 500, 300],
+            data: [9899, 8249, 7017, 5575, 4335, 3046, 1660, 551, 0],
           },
           {
             name: '贫困百分比',
@@ -161,7 +178,7 @@ export default defineComponent({
                 return value + '%'
               },
             },
-            data: [5.3, 5.5, 4.3, 4.2, 3.3, 2.4, 1.0, 1.5, 1.0, 1.2],
+            data: [5.3, 5.5, 4.3, 4.2, 3.3, 2.4, 1.5, 1.0, 0],
           },
         ],
       }

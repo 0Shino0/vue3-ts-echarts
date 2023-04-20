@@ -114,7 +114,7 @@ export default defineComponent({
         { name: '太仓', value: 27 },
         { name: '曲靖', value: 27 },
         { name: '烟台', value: 28 },
-        { name: '福州', value: 29 },
+        { name: '福州', value: 66.8 },
         { name: '瓦房店', value: 30 },
         { name: '即墨', value: 30 },
         { name: '抚顺', value: 31 },
@@ -485,22 +485,33 @@ export default defineComponent({
       let option = {
         title: {
           text: '全国绿色发展',
-          subtext: '数据来源国家数据',
+          subtext: '数据来源：中国森林资源报告',
           x: 'center',
           top: '20px',
         },
         tooltip: {
           trigger: 'item',
-          // formatter: '{b}<br/>{c} (p / km2)',
+          formatter: function (params: any) {
+            console.log(params)
+
+            return `${params.seriesName} <br/> ${params.name}：${params.value[2]} 万公顷`
+          },
         },
+
         geo: {
           map: 'china',
-          label: {
-            emphasis: {
-              show: true,
-              color: '#fff',
-            },
-          },
+          // label: {
+          //   emphasis: {
+          //     show: true,
+          //     color: '#fff',
+          //   },
+          // },
+          // tooltip: {
+          //   trigger: 'item',
+          //   formatter: function (params: any) {
+          //     console.log(params)
+          //   },
+          // },
           roam: false,
           zoom: 1.2,
           itemStyle: {
@@ -537,7 +548,7 @@ export default defineComponent({
         // },
         series: [
           {
-            name: '植树率',
+            name: '森林面积',
             type: 'scatter',
             coordinateSystem: 'geo',
             data: convertData(data),
@@ -561,7 +572,7 @@ export default defineComponent({
             },
           },
           {
-            name: 'Top 5',
+            name: '森林面积',
             type: 'effectScatter',
             coordinateSystem: 'geo',
             data: convertData(
@@ -595,6 +606,76 @@ export default defineComponent({
               scale: true,
             },
             zlevel: 1,
+          },
+          {
+            name: '森林覆盖率',
+            type: 'map',
+            map: 'china',
+            label: {
+              emphasis: {
+                show: true,
+                color: '#fff',
+              },
+            },
+            roam: false,
+            zoom: 1.2,
+            itemStyle: {
+              normal: {
+                areaColor: '#4FB69D',
+                borderColor: 'rgba(112,187,252,.5)',
+              },
+              emphasis: {
+                areaColor: '#62F7D3',
+              },
+            },
+            data: [
+              { name: '北京', value: 43.77, value2: 16, value3: 0 },
+              { name: '天津', value: 12.07, value2: 16, value3: 0 },
+              { name: '河北', value: 26.78, value2: 123, value3: 45 },
+              { name: '山西', value: 17.51, value2: 81, value3: 36 },
+              { name: '内蒙古', value: 22.1, value2: 72, value3: 31 },
+              { name: '辽宁', value: 39.24, value2: 100, value3: 0 },
+              { name: '吉林', value: 41.49, value2: 52, value3: 8 },
+              { name: '黑龙江', value: 43.78, value2: 104, value3: 21 },
+              { name: '上海', value: 14.04, value2: 16, value3: 0 },
+              { name: '江苏', value: 15.2, value2: 95, value3: 0 },
+              { name: '浙江', value: 59.43, value2: 90, value3: 0 },
+              { name: '安徽', value: 28.65, value2: 84, value3: 20 },
+              { name: '福建', value: 66.8, value2: 85, value3: 0 },
+              { name: '江西', value: 61.16, value2: 76, value3: 24 },
+              { name: '山东', value: 136, value2: 136, value3: 0 },
+              { name: '河南', value: 24.14, value2: 120, value3: 38 },
+              { name: '湖北', value: 39.61, value2: 75, value3: 28 },
+              { name: '湖南', value: 49.69, value2: 82, value3: 40 },
+              { name: '广东', value: 53.52, value2: 125, value3: 0 },
+              { name: '广西', value: 60.17, value2: 78, value3: 33 },
+              { name: '海南', value: 57.36, value2: 22, value3: 5 },
+              { name: '重庆', value: 43.11, value2: 24, value3: 14 },
+              { name: '四川', value: 38.03, value2: 117, value3: 66 },
+              { name: '贵州', value: 43.77, value2: 22, value3: 66 },
+              { name: '云南', value: 22.04, value2: 41, value3: 88 },
+              { name: '西藏', value: 12.14, value2: 0, value3: 74 },
+              { name: '陕西', value: 43.06, value2: 51, value3: 56 },
+              { name: '甘肃', value: 11.33, value2: 29, value3: 58 },
+              { name: '青海', value: 5.82, value2: 4, value3: 41 },
+              { name: '宁夏', value: 12.63, value2: 14, value3: 8 },
+              { name: '新疆', value: 4.87, value2: 74, value3: 32 },
+              { name: '台湾', value: 60.71, value2: 172, value3: 0 },
+              { name: '香港', value: 25.05, value2: 18, value3: 0 },
+              { name: '澳门', value: 30.0, value2: 8, value3: 0 },
+              // { name: '吉林', value: 1234 },
+              { name: '十段线', value: 0, value2: 0, value3: 0 },
+              { name: '南海诸岛', value: 0, value2: 0, value3: 0 },
+            ],
+            tooltip: {
+              trigger: 'item',
+              formatter: function (params: any) {
+                // console.log(params)
+                const data = params.data
+
+                return `${params.seriesName} <br/> ${params.name}：${data.value} %`
+              },
+            },
           },
         ],
       }

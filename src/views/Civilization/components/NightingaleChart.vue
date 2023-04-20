@@ -77,7 +77,8 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '近年文创热度',
+          text: '近年来文创企业注册数量（家）',
+          subtext: '数据来源：企查查官网',
           left: 'center',
         },
         legend: {
@@ -101,7 +102,7 @@ export default defineComponent({
         },
         series: [
           {
-            name: '近年文创热度',
+            name: '近年来文创企业注册数量（家）',
             type: 'pie',
             radius: [25, 125],
             center: ['50%', '50%'],
@@ -110,13 +111,12 @@ export default defineComponent({
               borderRadius: 8,
             },
             data: [
-              { value: 340, name: '2023' },
-              { value: 238, name: '2022' },
-              { value: 231, name: '2021' },
-              { value: 159, name: '2020' },
-              { value: 135, name: '2019' },
-              { value: 120, name: '2018' },
-              { value: 100, name: '2017' },
+              { value: 2015, name: '2016年' },
+              { value: 2726, name: '2017年' },
+              { value: 3325, name: '2018年' },
+              { value: 5030, name: '2019年' },
+              { value: 6629, name: '2020年' },
+              { value: 10955, name: '2021年' },
             ],
           },
         ],

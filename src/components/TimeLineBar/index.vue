@@ -80,9 +80,10 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '工业现代化图',
+          text: '工业现代化',
+          subtext: '数据来源：国家统计局',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
         tooltip: {
           trigger: 'axis',
@@ -100,10 +101,14 @@ export default defineComponent({
             restore: { show: true },
             saveAsImage: { show: true },
           },
+          orient: 'vertical',
+          left: 'right',
+          top: 'center',
         },
-        // legend: {
-        //   data: ['Evaporation', '贫困人口数量', '贫困百分比'],
-        // },
+        legend: {
+          data: ['中国工业信息安全企业注册数量', '增长率'],
+          left: 'right',
+        },
         xAxis: [
           {
             type: 'category',
@@ -133,19 +138,19 @@ export default defineComponent({
             // max: 15000,
             // interval: 1000,
             axisLabel: {
-              formatter: '{value} ',
+              formatter: '{value} 亿元',
             },
           },
-          // {
-          //   type: 'value',
-          //   name: '贫困百分比',
-          //   min: 0,
-          //   max: 14,
-          //   interval: 1,
-          //   axisLabel: {
-          //     formatter: '{value} ',
-          //   },
-          // },
+          {
+            type: 'value',
+            name: '增长率',
+            // min: 0,
+            // max: 14,
+            // interval: 1,
+            axisLabel: {
+              formatter: '{value} %',
+            },
+          },
         ],
         series: [
           {
@@ -158,44 +163,44 @@ export default defineComponent({
             },
             data: [
               {
-                value: 1000,
+                value: 188650,
                 itemStyle: {
                   color: '#a90000',
                 },
               },
-              2412,
-              3620,
-              5031,
-              6421,
+              193786,
+              216217,
+              228974,
+              245406,
               {
-                value: 7103,
+                value: 275119,
                 itemStyle: {
                   color: '#a90000',
                 },
               },
-              7598,
-              8210,
-              12680,
-              25069,
+              301089,
+              311859,
+              313071,
+              372575,
               {
-                value: 18760,
+                value: 401600,
                 itemStyle: {
                   color: '#a90000',
                 },
               },
             ],
           },
-          // {
-          //   name: '增长率',
-          //   type: 'line',
-          //   yAxisIndex: 1,
-          //   tooltip: {
-          //     valueFormatter: function (value: string | number) {
-          //       return value + '%'
-          //     },
-          //   },
-          //   data: [, 10.7, 12.2, 10.1, 7.6, 7.1, 8.2, 7.5, 6.6, 8.8, 7.2],
-          // },
+          {
+            name: '增长率',
+            type: 'line',
+            yAxisIndex: 1,
+            tooltip: {
+              valueFormatter: function (value: string | number) {
+                return value + '%'
+              },
+            },
+            data: [1.6, 2.7, 6.1, 5.9, 5.7, 6.2, 6.1, 4.8, 2.4, 9.6, 3.4],
+          },
         ],
       }
 

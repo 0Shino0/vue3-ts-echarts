@@ -101,7 +101,7 @@ export default defineComponent({
       let option = {
         title: {
           text: props.mapNameObj!.name + '绿色发展',
-          subtext: '数据来源国家数据',
+          subtext: '数据来源：国家统计局',
           x: 'center',
           top: '20px',
         },

@@ -61,9 +61,20 @@ export default defineComponent({
 <style lang="less">
 /*大型屏幕pc 超大屏*/
 @media screen and (min-width: 1200px) {
+  .home_nav_item {
+    li {
+      font-size: var(--w-space);
+    }
+  }
 }
 /*1200>=pc>=992 大屏，字体红色，背景黑色*/
 @media screen and (min-width: 992px) and (max-width: 1199px) {
+  .home_nav_item {
+    li {
+      font-size: 20px;
+      // font-size: var(--w-space-sm);
+    }
+  }
 }
 /*768<=pad<992 中屏，字体黄色，背景红色*/
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -76,15 +87,23 @@ export default defineComponent({
 }
 
 .home_header_container {
-  position: absolute;
+  // position: absolute;
   // height: calc(var(--w-space-sm) * 4);
-  z-index: 10;
-  top: 0px;
-  left: calc((100% - 1039.6px) / 2);
+  // z-index: 10;
+  // top: 0px;
+  // left: calc((100% - 1039.6px) / 2);
+
+  // position: static;
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  // justify-content: center;
 
   .home_nav_contianer {
+    width: 100vw;
     display: flex;
     justify-content: center;
+    // text-align: center;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 0px;
@@ -98,7 +117,7 @@ export default defineComponent({
 
       li {
         color: var(--c-light-blue);
-        font-size: var(--w-space);
+        // font-size: var(--w-space);
         font-weight: bold;
       }
 
@@ -106,8 +125,9 @@ export default defineComponent({
         // color: var(--c-title-big-theme);
         color: var(--c-title-big-theme);
         // font-family: 'STXingkai';
-        font-size: 24px;
+        // font-size: 24px;
         font-family: 'SimSun';
+        text-shadow: 0px 10px 5px #000;
       }
     }
 

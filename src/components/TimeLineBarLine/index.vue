@@ -81,11 +81,14 @@ export default defineComponent({
       let option = {
         title: {
           text: '中央财政国防支出',
+          subtext: '数据来源：国家统计局',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
         tooltip: {
           trigger: 'axis',
+          left: 'right',
+          top: 'center',
           axisPointer: {
             type: 'cross',
             crossStyle: {
@@ -100,10 +103,14 @@ export default defineComponent({
             restore: { show: true },
             saveAsImage: { show: true },
           },
+          orient: 'vertical',
+          left: 'right',
+          top: 'center',
         },
         legend: {
           // 'Evaporation',
           data: ['中央财政国防支出', '增长率'],
+          left: 'right',
         },
         xAxis: [
           {
@@ -130,9 +137,9 @@ export default defineComponent({
           {
             type: 'value',
             name: '中央财政国防支出',
-            min: 0,
-            max: 15000,
-            interval: 1000,
+            // min: 0,
+            // max: 15000,
+            // interval: 1000,
             axisLabel: {
               formatter: '{value} ',
             },
@@ -140,9 +147,9 @@ export default defineComponent({
           {
             type: 'value',
             name: '增长率',
-            min: 0,
-            max: 14,
-            interval: 1,
+            // min: 0,
+            // max: 14,
+            // interval: 1,
             axisLabel: {
               formatter: '{value} ',
             },
@@ -158,8 +165,8 @@ export default defineComponent({
               },
             },
             data: [
-              6481, 7177, 8055, 8869, 9546, 10226, 11070, 11897, 12680, 13795,
-              14760,
+              6691.9, 7410.6, 8289.5, 9087.8, 9765.8, 10432.4, 11280.5, 12122.1,
+              12916.2, 13787.4, 14504.5,
             ],
           },
           {
@@ -171,7 +178,7 @@ export default defineComponent({
                 return value + '%'
               },
             },
-            data: [, 10.7, 12.2, 10.1, 7.6, 7.1, 8.2, 7.5, 6.6, 8.8, 7.2],
+            data: [11.0, 10.7, 12.2, 10.1, 7.6, 7.1, 8.2, 7.5, 6.6, 8.8, 7.2],
           },
         ],
       }

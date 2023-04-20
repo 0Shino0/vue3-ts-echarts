@@ -106,7 +106,7 @@ export default defineComponent({
 
 <style lang="less">
 .province-container {
-  margin-top: 64px;
+  // margin-top: 64px;
   background-color: #fefefe;
   position: relative;
 

@@ -80,6 +80,7 @@ export default defineComponent({
       let option = {
         title: {
           text: '国风热潮',
+          subtext: '数据来源：腾讯研究院',
           left: 'center',
         },
         tooltip: {

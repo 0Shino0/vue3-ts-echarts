@@ -130,7 +130,7 @@ export default defineComponent({
 <style lang="less">
 .timeline-container {
   // height: 800px;
-  margin-top: 64px;
+  // margin-top: 64px;
   width: 100vw;
 
   .timeline {
@@ -193,6 +193,7 @@ export default defineComponent({
     flex-wrap: nowrap;
     width: 100vw;
   }
+
   .timeline-echarts-container {
     // width: 600px;
     // width: 100%;

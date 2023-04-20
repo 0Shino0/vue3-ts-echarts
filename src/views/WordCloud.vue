@@ -42,7 +42,7 @@ export default defineComponent({
 
 <style lang="less">
 .wordcloud-container {
-  margin-top: 64px;
+  // margin-top: 64px;
 
   background-image: linear-gradient(
     to left bottom,

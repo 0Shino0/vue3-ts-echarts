@@ -95,12 +95,25 @@ export default defineComponent({
             },
           ],
           tooltip: {},
+          toolbox: {
+            feature: {
+              dataView: { show: true, readOnly: false },
+              magicType: { show: true, type: ['line', 'bar'] },
+              restore: { show: true },
+              saveAsImage: { show: true },
+            },
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+          },
         },
         //变量则写在options中
         options: [
           {
             title: {
               text: '2012年农业数字经济占农业增加值比重',
+              subtext: '数据来源：国家统计局',
+              left: 'center',
             },
             legend: {
               top: 'top',
@@ -139,6 +152,7 @@ export default defineComponent({
             title: {
               text: '2018年农业数字经济占农业增加值比重',
               // subtext: '单位:Mwh'
+              subtext: '数据来源：国家统计局',
             },
             series: [
               {
@@ -160,6 +174,7 @@ export default defineComponent({
             title: {
               text: '2022年农业数字经济占农业增加值比重',
               // subtext: '单位:Mwh'
+              subtext: '数据来源：国家统计局',
             },
             series: [
               {
@@ -181,6 +196,7 @@ export default defineComponent({
             title: {
               text: '两会期间农业数字经济占农业增加值比重',
               // subtext: '单位:Mwh'
+              subtext: '数据来源：国家统计局',
             },
             series: [
               {
