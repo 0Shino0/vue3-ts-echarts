@@ -245,7 +245,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   margin: 0;
-  border: 1px solid red;
+  // border: 1px solid red;
   min-height: 860px;
   position: relative;
 
@@ -254,8 +254,8 @@ export default defineComponent({
     text-align: center;
 
     h1 {
-      color: var(--c-title-big-theme);
-
+      // color: var(--c-title-big-theme);
+      color: #dd1d1d;
       margin: 0 auto;
     }
   }

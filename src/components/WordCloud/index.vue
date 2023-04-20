@@ -295,7 +295,8 @@ export default defineComponent({
 // 标题
 .wordcloud-tag-title {
   h1 {
-    color: var(--c-title-big-theme);
+    // color: var(--c-title-big-theme);
+    color: #dd1d1d;
     text-align: center;
   }
 }
@@ -312,9 +313,10 @@ export default defineComponent({
   font-weight: bold;
 }
 
-.tag:hover {
-  border: 1px solid #666;
-}
+// 取消边框
+// .tag:hover {
+// border: 1px solid #666;
+// }
 
 // 测试
 /*重置默认的外边距和内边距*/
@@ -427,7 +429,7 @@ body {
 }
 .content {
   // border: 1px solid #081f5a;
-  border: 1px solid red;
+  // border: 1px solid red;
   min-height: 860px;
   position: relative;
 }
