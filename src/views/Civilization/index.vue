@@ -40,7 +40,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="civilization-container" style="width: 100%; height: 40vw">
+  <div class="civilization-container" style="width: 100%; height: 45vw">
     <div class="civilization-map-container" style="width: 100vw; height: 40vw">
       <map-chart></map-chart>
     </div>

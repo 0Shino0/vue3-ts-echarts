@@ -52,7 +52,7 @@ export default defineComponent({
       //   barCharts.value.resize()
       // }
       const windowOnresizePopulationEvent = () => {
-        barCharts.value.resize()
+        if (barCharts.value) barCharts.value.resize()
       }
       $bus.on('windowOnresizePopulation', windowOnresizePopulationEvent)
     })
@@ -230,7 +230,8 @@ export default defineComponent({
           {
             type: 'line',
             name: '美国国内生产总值增速',
-            color: '#FAC858',
+            // color: '#FAC858',
+            color: '#4CD7FF',
             connectNulls: false,
             yAxisIndex: 1,
             symbolSize: 4,
@@ -461,6 +462,9 @@ export default defineComponent({
             zlevel: 0,
             z: 2,
             left: '5%',
+            right: '10%',
+            bottom: '4%',
+            // left: '5%',
             // right: '20%',
             containLabel: false,
             backgroundColor: 'transparent',

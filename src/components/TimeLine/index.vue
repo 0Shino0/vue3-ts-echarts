@@ -98,7 +98,7 @@ export default defineComponent({
 
 <template>
   <div class="timeline-container">
-    <vue-horizontal-timeline :items="items" />
+    <!-- <vue-horizontal-timeline :items="items" /> -->
 
     <!-- 工业 科技 -->
     <div class="timeline-echarts-top">

@@ -84,15 +84,15 @@ export default defineComponent({
           x: 'center',
           top: '20px',
         },
-
         xAxis: {
           type: 'category',
           boundaryGap: false,
           data: ['2017', '2018', '2019', '2020'],
         },
         tooltip: {
-          trigger: 'item',
-          formatter: '{b}<br/>{c}',
+          // trigger: 'item',
+          trigger: 'axis',
+          formatter: '{a}<br/>{b}：{c} 亿元',
         },
         toolbox: {
           orient: 'vertical',
@@ -111,6 +111,7 @@ export default defineComponent({
         series: [
           {
             // data: [300, 450, 600, 750, 900],
+            name: '中央财政补助地方专项扶贫资金',
             data: [837, 1178, 1226, 1461],
             type: 'line',
             areaStyle: {},

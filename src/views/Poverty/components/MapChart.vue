@@ -82,7 +82,7 @@ export default defineComponent({
         title: {
           // text: '全国34省市区的832个贫困县分布图',
           text: '中国国家级贫困地区与非贫困地区分布图',
-          subtext: '数据来源：中华⼈⺠共乐和国中央⼈⺠政府、中国减贫研究数据库',
+          subtext: '数据来源：中华⼈⺠共和国中央⼈⺠政府、中国减贫研究数据库',
           x: 'center',
           top: '20px',
         },

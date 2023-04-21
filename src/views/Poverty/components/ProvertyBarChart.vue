@@ -80,7 +80,7 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '各年份全国农村贫困人口数量',
+          text: '各年份全国农村贫困人口数量（万人）',
           x: 'center',
           top: '20px',
         },
@@ -160,11 +160,11 @@ export default defineComponent({
         },
         series: [
           {
-            name: '贫困人口数量（万人）',
+            name: '贫困人口数量',
             type: 'bar',
             tooltip: {
               valueFormatter: function (value: string | number) {
-                return value + ''
+                return value + '万人'
               },
             },
             data: [9899, 8249, 7017, 5575, 4335, 3046, 1660, 551, 0],

@@ -182,7 +182,8 @@ export default defineComponent({
         tooltip,
         radar: {
           center: ['50%', '50%'], //圆心坐标距离左边和上边的距离
-          radius: ['1%', '75%'], //内外半径，不写默认是75%
+          // radius: ['1%', '75%'], //内外半径，不写默认是75%
+          radius: ['1%', '55%'], //内外半径，不写默认是75%
           startAngle: 90, //可以旋转图形
           shape: 'polygon',
           axisName: {

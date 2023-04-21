@@ -165,7 +165,12 @@ export default defineComponent({
         },
         radiusAxis: {
           type: 'category',
-          data: ['2020年', '2021年', '2022年', '2023年'],
+          data: [
+            '2020年',
+            '2021年',
+            '2022年',
+            // '2023年'
+          ],
           scale: false,
         },
         angleAxis: {

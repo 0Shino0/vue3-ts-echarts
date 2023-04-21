@@ -106,7 +106,7 @@ export default defineComponent({
         grid: {
           left: '3%',
           right: '4%',
-          bottom: '3%',
+          bottom: '0%',
           containLabel: true,
         },
         xAxis: [
@@ -122,6 +122,28 @@ export default defineComponent({
           },
         ],
         series: [
+          {
+            name: '中国',
+            type: 'line',
+            stack: 'Total',
+            areaStyle: {},
+            itemStyle: {
+              normal: {
+                color: '#BC252F',
+                lineStyle: {
+                  // color: '#00C6FF',
+                  width: 2,
+                },
+              },
+            },
+            emphasis: {
+              focus: 'series',
+            },
+            data: [
+              562579779, 662579779, 759200000, 911750000, 1011750000,
+              1400750000, 1411750000,
+            ],
+          },
           {
             name: '德国',
             type: 'line',
@@ -214,29 +236,6 @@ export default defineComponent({
               1409200000,
             ],
           },
-
-          {
-            name: '中国',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            itemStyle: {
-              normal: {
-                color: '#BC252F',
-                lineStyle: {
-                  // color: '#00C6FF',
-                  width: 2,
-                },
-              },
-            },
-            emphasis: {
-              focus: 'series',
-            },
-            data: [
-              562579779, 662579779, 759200000, 911750000, 1011750000,
-              1400750000, 1411750000,
-            ],
-          },
         ],
       }
 
@@ -256,19 +255,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="population-container">
+  <div class="population-container" style="width: 100%">
     <div
       class="pupulation-linecharts-container"
-      style="width: 100%; height: 600px"
+      style="width: 100%; height: 80vh"
     >
       <div
         class="population-line-charts"
         ref="chart"
-        style="width: 100%; height: 600px"
+        style="width: 100%; height: 80vh"
       ></div>
     </div>
 
-    <div class="timeline-echarts-item" style="width: 100%; height: 600px">
+    <div class="pupulation-bar-chart" style="width: 100%; height: 80vh">
       <bar-chart></bar-chart>
     </div>
   </div>
@@ -277,12 +276,18 @@ export default defineComponent({
 <style lang="less">
 .population-container {
   // margin-top: 64px;
+  height: calc(100vh - 64px);
   background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .pupulation-linecharts-container {
-  padding-top: 20px;
+  // padding-top: 20px;
+  // bottom: 0;
 }
 
 .population-line-charts {
+  // padding-top: 20px;
 }
 </style>

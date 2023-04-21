@@ -15,7 +15,7 @@
   <!-- 底部图片 -->
   <div class="img-footer">
     <!-- <img src="@/assets/img/1440-900-bg-3.png" alt="" /> -->
-    <img src="@/assets/img/1440-900-bg-5.png" alt="" />
+    <img src="@/assets/img/1440-800-bg-6.png" alt="" />
   </div>
 </template>
 

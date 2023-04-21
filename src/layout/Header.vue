@@ -48,11 +48,11 @@ export default defineComponent({
       <router-link to="/civilization" class="home_nav_item">
         <li class="home_nav_text">物质文明与精神文明</li>
       </router-link>
-      <router-link to="/nature" class="home_nav_item">
-        <li class="home_nav_text">人与自然</li>
-      </router-link>
       <router-link to="/peace" class="home_nav_item">
         <li class="home_nav_text">和平发展</li>
+      </router-link>
+      <router-link to="/nature" class="home_nav_item">
+        <li class="home_nav_text">人与自然</li>
       </router-link>
     </ul>
   </div>

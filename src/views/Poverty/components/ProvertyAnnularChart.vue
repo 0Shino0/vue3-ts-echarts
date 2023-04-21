@@ -85,7 +85,7 @@ export default defineComponent({
         },
         tooltip: {
           // trigger: `item`
-          formatter: '{a}<br/>{b} : {c}',
+          formatter: '{a}<br/>{b} : {c}%',
         },
         legend: {
           top: 'bottom',
