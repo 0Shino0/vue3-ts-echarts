@@ -52,7 +52,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="nature-container" style="width: 100%">
+  <div class="peace-container" style="width: 100%">
     <div class="peace-peacebar-container" style="width: 100vw; height: 40vw">
       <!-- height: 700px -->
       <peace-bar-chart></peace-bar-chart>
@@ -74,20 +74,22 @@ export default defineComponent({
 </template>
 
 <style lang="less">
-.nature-container {
+.peace-container {
   // margin-top: 64px;
-  background-color: #fefefe;
+  // background-color: #fefefe;
+  background-color: #fff1ba;
   position: relative;
 
-  // .peace-peacebar-container {
-  //   // position: absolute;
-  //   margin-top: 20px;
-  // }
+  .peace-peacebar-container {
+    // position: absolute;
+    padding-top: 20px;
+  }
+
   .peace-footer {
     display: flex;
     flex-wrap: nowrap;
     margin-top: 20px;
-    height: ;
+    // height: ;
   }
 }
 </style>

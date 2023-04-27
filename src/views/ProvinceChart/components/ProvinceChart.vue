@@ -101,8 +101,12 @@ export default defineComponent({
       let option = {
         title: {
           text: props.mapNameObj!.name + '绿色发展',
-          subtext: '数据来源：国家统计局',
+          subtext:
+            '数据来源：国家统计局 \n 地图来源：高德地图（GeoJSON） | 审图号：2022 高德软件 GS京(2022)1061号',
+          sublink:
+            'http://datav.aliyun.com/portal/school/atlas/area_selector#&lat=33.521903996156105&lng=104.29849999999999&zoom=4',
           x: 'center',
+          // top: '20px',
           top: '20px',
         },
         tooltip: {
@@ -140,7 +144,7 @@ export default defineComponent({
             },
           },
           roam: false,
-          zoom: 1.2,
+          zoom: 0.9,
           itemStyle: {
             normal: {
               areaColor: '#4FB69D',
@@ -151,6 +155,7 @@ export default defineComponent({
             },
           },
         },
+
         series: [
           // {
           //   name: '中国贫困人口人数',

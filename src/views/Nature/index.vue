@@ -52,7 +52,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="nature-container" style="width: 100%; height: 55vw">
+  <div class="nature-container" style="width: 100%">
     <div class="nature-map-container" style="width: 100vw; height: 50vw">
       <map-chart></map-chart>
     </div>
@@ -68,8 +68,10 @@ export default defineComponent({
 <style lang="less">
 .nature-container {
   // margin-top: 64px;
-  background-color: #fefefe;
+  // background-color: #fefefe;
+  background-color: #fff1ba;
   position: relative;
+  height: calc(100vh + 64px);
 
   .nature-map-container {
     position: absolute;

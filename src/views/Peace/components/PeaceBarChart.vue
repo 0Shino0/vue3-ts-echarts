@@ -83,12 +83,12 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      peaceBarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      peaceBarCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       peaceLiquidfillLeftchart.value = markRaw(
-        echarts.init(liquidfillLeftchart.value!, 'roma')
+        echarts.init(liquidfillLeftchart.value!, 'bgYellow')
       )
       peaceLiquidfillRightchart.value = markRaw(
-        echarts.init(liquidfillRightchart.value!, 'roma')
+        echarts.init(liquidfillRightchart.value!, 'bgYellow')
       )
       // setOptions(props.chartData)
 
@@ -105,6 +105,9 @@ export default defineComponent({
         animationDurationUpdate: 300,
         animationEasingUpdate: 'cubicOut',
         animationDelayUpdate: 0,
+        // color: ['#294D99', '#156ACF', '#1598ED', '#45BDFF'],
+        // color: ['#DD1D1D', '#0032E8', '#2EC7C9', '#D87C7C'],
+        color: ['#DD1D1D', '#0028ba', '#2EC7C9', '#D87C7C'],
         series: [
           {
             type: 'bar',
@@ -402,7 +405,7 @@ export default defineComponent({
         title: [
           {
             text: '中国对外援助增长率',
-
+            top: '50',
             left: 'center',
             padding: 5,
             itemGap: 10,
@@ -483,6 +486,7 @@ export default defineComponent({
           {
             text: '美国对外援助增长率',
             left: 'center',
+            top: '50',
             padding: 5,
             itemGap: 10,
           },

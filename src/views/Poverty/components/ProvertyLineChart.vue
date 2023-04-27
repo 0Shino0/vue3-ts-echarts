@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      provertyLineCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      provertyLineCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -80,10 +80,11 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '中央财政补助地方专项扶贫资金（亿元）',
+          text: '中央财政补助地方专项扶贫资金',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
+        color: '#DD1D1D',
         xAxis: {
           type: 'category',
           boundaryGap: false,
@@ -107,7 +108,28 @@ export default defineComponent({
         },
         yAxis: {
           type: 'value',
+          // type: 'value',
+          nameTextStyle: {
+            // align: 'left',
+            padding: [0, 0, 0, 120],
+            rich: {
+              a: {
+                // 没有设置 `align`，则 `align` 为 right
+              },
+            },
+          },
+          name: '中央财政补助地方专项扶贫资金/亿元',
+          // min: 0,
+          // max: 12000,
+          // interval: 2000,
+          axisLabel: {
+            formatter: '{value} ',
+          },
+          splitLine: {
+            show: false, // 删除网格线
+          },
         },
+
         series: [
           {
             // data: [300, 450, 600, 750, 900],

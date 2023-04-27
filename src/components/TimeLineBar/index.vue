@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      timeLineBarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      timeLineBarCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -85,6 +85,7 @@ export default defineComponent({
           x: 'center',
           // top: '20px',
         },
+        backgroundColor: '#FFF1BA',
         tooltip: {
           trigger: 'axis',
           // axisPointer: {
@@ -106,7 +107,7 @@ export default defineComponent({
           top: 'center',
         },
         legend: {
-          data: ['中国工业信息安全企业注册数量', '增长率'],
+          data: ['工业增加值', '增长率'],
           left: 'right',
         },
         xAxis: [
@@ -133,61 +134,54 @@ export default defineComponent({
         yAxis: [
           {
             type: 'value',
-            name: '中国工业信息安全企业注册数量',
+            name: '工业增加值/亿元',
             // min: 0,
-            // max: 15000,
+
+            max: 900000,
             // interval: 1000,
             axisLabel: {
-              formatter: '{value} 亿元',
+              formatter: '{value}',
             },
           },
           {
             type: 'value',
-            name: '增长率',
-            // min: 0,
-            // max: 14,
-            // interval: 1,
+            show: false,
+            name: '增长率/%',
+            // axisLine: {
+            //   show: false,
+            // },
+            // axisTick: {
+            // show: false,
+            // },
+            // minorTick: {
+            //   show: false,
+            // },
+            // axisPointer: { type: 'none' },
+            min: 0,
+            max: 13,
+            alignTicks: true, // 多y轴自动对齐
             axisLabel: {
-              formatter: '{value} %',
+              formatter: '{value}',
             },
           },
         ],
         series: [
           {
-            name: '中国工业信息安全企业注册数量',
+            name: '工业增加值',
             type: 'bar',
             tooltip: {
               valueFormatter: function (value: string | number) {
                 return value + ''
               },
             },
+            // color: '#a90000',
+            color: '#DD1D1D',
+            // barWidth: '80%', //柱图宽度
+            // barWidth: '70%', //柱图宽度
+            // barWidth: '60%', //柱图宽度
             data: [
-              {
-                value: 188650,
-                itemStyle: {
-                  color: '#a90000',
-                },
-              },
-              193786,
-              216217,
-              228974,
-              245406,
-              {
-                value: 275119,
-                itemStyle: {
-                  color: '#a90000',
-                },
-              },
-              301089,
-              311859,
-              313071,
-              372575,
-              {
-                value: 401600,
-                itemStyle: {
-                  color: '#a90000',
-                },
-              },
+              188650, 193786, 216217, 228974, 245406, 275119, 301089, 311859,
+              313071, 372575, 401600,
             ],
           },
           {
@@ -202,6 +196,9 @@ export default defineComponent({
             data: [1.6, 2.7, 6.1, 5.9, 5.7, 6.2, 6.1, 4.8, 2.4, 9.6, 3.4],
           },
         ],
+        grid: {
+          left: '100',
+        },
       }
 
       timeLineBarCharts.value.setOption(option)

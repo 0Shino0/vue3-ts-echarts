@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      provertyBarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      provertyBarCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -80,10 +80,11 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '各年份全国农村贫困人口数量（万人）',
+          text: '各年份全国农村贫困人口数量',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
+        color: '#DD1D1D',
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -104,9 +105,9 @@ export default defineComponent({
             saveAsImage: { show: true },
           },
         },
-        legend: {
-          data: ['Evaporation', '贫困人口数量', '贫困百分比'],
-        },
+        // legend: {
+        //   data: ['Evaporation', '贫困人口数量', '贫困百分比'],
+        // },
         xAxis: [
           {
             type: 'category',
@@ -133,7 +134,7 @@ export default defineComponent({
         yAxis: [
           {
             type: 'value',
-            name: '贫困人口数量',
+            name: '贫困人口数量/万人',
             min: 0,
             max: 12000,
             interval: 2000,
@@ -146,7 +147,7 @@ export default defineComponent({
           },
           {
             type: 'value',
-            name: '贫困百分比',
+            name: '贫困百分比/%',
             // min: 0,
             // max: 8,
             // interval: 1,

@@ -173,13 +173,14 @@ export default defineComponent({
       let option = {
         title: {
           text: '全国碳达峰碳中和值数',
-          // subtext: '数据来源国家数据',
+          subtext: '数据来源：中国森林资源报告',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
         color,
         legend,
         tooltip,
+
         radar: {
           center: ['50%', '50%'], //圆心坐标距离左边和上边的距离
           // radius: ['1%', '75%'], //内外半径，不写默认是75%
@@ -189,6 +190,7 @@ export default defineComponent({
           axisName: {
             color: '#4FB69D',
             fontSize: 10,
+            padding: [-10, -10, -10, -10],
           },
           indicator: indicator,
           splitArea: {

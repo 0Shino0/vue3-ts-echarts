@@ -87,6 +87,17 @@ export default defineComponent({
 
     const setOptions = () => {
       let option = {
+        title: {
+          text: props.mapNameObj!.name + '碳排放',
+          // subtext: '数据来源国家数据',
+          x: 'left',
+          top: '0%',
+          textStyle: {
+            // color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 14,
+          },
+        },
         tooltip: {
           trigger: 'axis',
           formatter: '{b}</br>{a}: {c}</br>{a1}: {c1}',
@@ -105,7 +116,7 @@ export default defineComponent({
           show: false,
         },
         grid: {
-          top: '18%',
+          top: '20%',
           right: '5%',
           bottom: '8%',
           left: '5%',
@@ -123,7 +134,7 @@ export default defineComponent({
               '2020',
               '2021',
               '2022',
-              '2023',
+              // '2023',
             ],
             splitLine: {
               show: false,
@@ -153,9 +164,21 @@ export default defineComponent({
             // nameTextStyle: {
             //   color: '#fff',
             // },
+            nameTextStyle: {
+              // align: 'left',
+              // color: '#4EA397',
+              color: '#9D9D9A',
+              padding: [0, 0, 0, 60],
+              rich: {
+                a: {
+                  // 没有设置 `align`，则 `align` 为 right
+                },
+              },
+            },
             interval: 5,
             max: 40,
-            min: 20,
+            // min: 20,
+            min: 25,
             splitLine: {
               show: true,
               // lineStyle: {
@@ -180,13 +203,15 @@ export default defineComponent({
             },
           },
           {
-            min: 5,
+            min: 4.2,
             max: 5.8,
-            interval: 0.2,
+            interval: 0.4,
             type: 'value',
             name: '人均碳排量 吨/人',
             nameTextStyle: {
-              color: '#fff',
+              // color: '#fff',
+              // color: '#4EA397',
+              color: '#9D9D9A',
             },
             splitLine: {
               show: true,

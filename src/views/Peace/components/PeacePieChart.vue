@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      PeacePieCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      PeacePieCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -87,6 +87,7 @@ export default defineComponent({
         animationDurationUpdate: 300,
         animationEasingUpdate: 'cubicOut',
         animationDelayUpdate: 0,
+
         series: [
           {
             type: 'line',
@@ -180,13 +181,25 @@ export default defineComponent({
               //   value: 2149,
               // },
             ],
-            radius: ['70%', '80%'],
+            radius: ['60%', '70%'],
             center: ['50%', '50%'],
+            color: [
+              '#ff0000',
+              '#b11717',
+              '#D26872',
+              '#ff5357',
+              // '#E3B7BB',
+              '#FD3100',
+              '#DD1D1D',
+              '#E01F54',
+              '#FDCA01',
+              '#FD9800',
+            ],
             label: {
               show: true,
               position: 'top',
               margin: 8,
-              formatter: '{b}: {c} 万米',
+              formatter: '{b}: {c} 公里',
             },
             rippleEffect: {
               show: true,
@@ -211,6 +224,7 @@ export default defineComponent({
             itemHeight: 14,
           },
           {
+            type: 'scroll',
             data: [
               '2013年',
               '2014年',
@@ -225,14 +239,14 @@ export default defineComponent({
             ],
             selected: {},
             show: true,
-            left: '2%',
-            top: '-1%',
+            left: 'center',
+            // top: '-1%',
             // top: '15%',
             // orient: 'vertical',
             orient: 'horizontal',
             padding: 5,
             itemGap: 10,
-            itemWidth: 25,
+            itemWidth: 16,
             itemHeight: 14,
           },
         ],
@@ -252,7 +266,7 @@ export default defineComponent({
           },
           borderWidth: 0,
           padding: 5,
-          formatter: '{b}: {c} 万米',
+          formatter: '{b}: {c} 公里',
         },
         xAxis: [
           {
@@ -319,8 +333,9 @@ export default defineComponent({
           },
           {
             text: '中国对外援助修建的铁路',
+            subtext: '数据来源：国家统计局',
             x: 'center',
-            top: '2%',
+            top: '20',
             padding: 5,
             itemGap: 10,
           },
@@ -331,8 +346,9 @@ export default defineComponent({
             zlevel: 0,
             z: 2,
             top: '30%',
-            right: '35%',
-            width: '300px',
+            // right: '25%',
+            right: 'center',
+            width: '40%',
             containLabel: false,
             backgroundColor: 'transparent',
             // "borderColor": "#ccc",

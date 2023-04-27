@@ -81,7 +81,7 @@ export default defineComponent({
       let option = {
         title: {
           text: '全国森林资源清查数据',
-          subtext: '数据来源国家数据',
+          subtext: '数据来源：中国森林资源报告',
           x: 'center',
           top: '20px',
         },

@@ -70,7 +70,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      funnelCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      funnelCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -80,31 +80,47 @@ export default defineComponent({
       let option = {
         title: {
           text: '国风热潮',
-          subtext: '数据来源：腾讯研究院',
+          subtext: '数据来源：网络直播文艺生态报告',
           left: 'center',
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{a} <br/>{b} : {c}%',
+          formatter: '{a} <br/>{b} : 观看时长同比增长 {c}%',
         },
         legend: {
           // data: ['国漫', '绘画', '汉服', '书法', '名胜古迹'],
-          top: 'bottom',
           type: 'scroll',
-          orient: 'vertical',
+          // orient: 'vertical',
           left: '5px',
+          top: 'bottom',
         },
+        // grid: {
+        // left: 10,
+        // right: 10,
+        // bottom: 20,
+        // top: 30,
+        // containLabel: true,
+        // },
         series: [
           {
             name: '国风热潮',
             type: 'funnel',
-            left: '5',
+            left: '-5',
             width: '100%',
-            color: ['#F5BD8A', '#B22F0C', '#f89898', '#D05C67', '#E01F54'],
+            // color: ['#F5BD8A', '#B22F0C', '#f89898', '#D05C67', '#E01F54'],
+            color: [
+              '#b11717',
+              '#ff0000',
+              '#DD1D1D',
+              '#ff5357',
+              '#D26872',
+              '#E3B7BB',
+              // '#B22F0C',
+            ],
             // width: '80%',
             label: {
               position: 'inside',
-              formatter: '{c}%',
+              formatter: '{b}',
               // color: '#fff',
             },
             itemStyle: {
@@ -112,19 +128,19 @@ export default defineComponent({
               // borderColor: '#fff',
               borderWidth: 2,
             },
-
             emphasis: {
               label: {
                 position: 'inside',
-                formatter: '{b}: {c}%',
+                formatter: '{b}: 观看时长同比增长 {c}%',
               },
             },
             data: [
-              { value: 30, name: '汉服' },
-              { value: 10, name: '书法' },
-              { value: 20, name: '名胜古迹' },
-              { value: 50, name: '各地风俗' },
-              { value: 80, name: '国画' },
+              { value: 278, name: '曲艺' },
+              { value: 264, name: '传统手工艺' },
+              { value: 231, name: '汉服' },
+              { value: 149, name: '棋牌' },
+              { value: 132, name: '书法国画' },
+              { value: 98, name: '民族乐器' },
             ],
             // Ensure outer shape will not be over inner shape when hover.
             z: 100,

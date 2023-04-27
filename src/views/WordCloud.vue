@@ -51,7 +51,8 @@ export default defineComponent({
   //   #f59657,
   //   #d5110d
   // );
-  background-color: #fff;
+  // background-color: #FFF1BA;
+  background-color: #fff1ba;
 
   .wordcloud-header {
     .wordcloud-header-img {

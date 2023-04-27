@@ -74,7 +74,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      lineCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      lineCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       let purchases: PurchasesMember = {

@@ -37,10 +37,10 @@ export default defineComponent({
     var EY: number
 
     const wordCloudData = {
-      h1: [`中国现代化`],
+      h1: [`现代化`, `人民`, `社会主义`, `党的领导`],
       h2: [
         `可持续发展`,
-        `节能减排`,
+        `中华民族伟大复兴`,
         `人口规模巨大`,
         `走和平发展道路`,
         `全体人民共同富裕`,
@@ -54,14 +54,13 @@ export default defineComponent({
         `中心任务`,
         `反腐`,
         `新发展理念`,
-        `中华民族伟大复兴`,
         `人民首创精神`,
         `高质量发展`,
         `人类命运共同体`,
       ],
       h4: [`创新驱动发展`, `人民至上`, `乡村振兴`, `中国故事`],
       h5: [`健康中国`, `美丽中国`, `第二个百年奋斗目标`, `不忘初心`],
-      h6: [`历史周期律`, `港人治港`, `澳人治澳`, `生命至上`],
+      h6: [`历史周期律`, `环境保护`, `社会保障`, `生命至上`],
     }
 
     // 生命周期钩子
@@ -283,12 +282,19 @@ export default defineComponent({
   padding: 0;
 }
 
+.wordcloud-wrap {
+  background-color: #fff1ba;
+}
+
 // 词云主要 容器
 .tagBall {
   // width: 1800px;
   max-width: 1080px;
-  height: 800px;
-  margin: 50px auto;
+  // max-width: 80vw;
+  // height: 800px;
+  height: 100vh;
+  // margin: 50px auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -311,6 +317,26 @@ export default defineComponent({
   font-size: 20px;
   font-family: '微软雅黑';
   font-weight: bold;
+
+  h1 {
+    color: #dd1d1d;
+  }
+
+  h2 {
+    color: #ed1560;
+  }
+  h3 {
+    color: #b0204a;
+  }
+  h4 {
+    color: #480242;
+  }
+  h5 {
+    color: #5b0144;
+  }
+  h6 {
+    color: #54205b;
+  }
 }
 
 // 取消边框
@@ -373,7 +399,7 @@ body {
   // background: url(@/assets/img/bg.png) no-repeat;
   // margin-top: 64px;
   // height: 1080px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   background-size: cover;
   width: 100%;
 }
@@ -430,7 +456,7 @@ body {
 .content {
   // border: 1px solid #081f5a;
   // border: 1px solid red;
-  min-height: 860px;
+  min-height: 750px;
   position: relative;
 }
 div.content1 {

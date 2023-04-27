@@ -100,7 +100,8 @@ body {
   // height: 100%;
   font-size: 14px;
   font-family: Arial, sans-serif;
-  background-color: #041527;
+  // background-color: #041527;
+  background-color: #fff1ba;
 }
 ul,
 p {
@@ -1467,7 +1468,8 @@ canvas {
 }
 
 .pace .pace-progress {
-  background: #041527;
+  // background: #041527;
+  background: #fff1ba;
   position: fixed;
   z-index: 2000;
   top: 0;
