@@ -3,11 +3,6 @@
 ## 技术栈
 项目基于 Vue3 + Vite + TypeScript + ECharts进行开发。
 
-项目模板使用的是preset
-```bash
-npm create preset
-```
-
 ## 效果预览
 - 首页
 ![首页](https://shinoimg.yyshino.top/img/202304101958791.png)
