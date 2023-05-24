@@ -69,10 +69,10 @@ export default defineComponent({
         RADIUS = 300
         fallLength = 500
         tags = [] // 存储
-        angleX = Math.PI / 500
-        angleY = Math.PI / 500
-        CX = paper.value.offsetWidth / 2
-        CY = paper.value.offsetHeight / 2
+        angleX = Math.PI / 500 // 球一帧绕x轴旋转的角度
+        angleY = Math.PI / 500 //球-帧绕y轴旋转的角度
+        CX = paper.value.offsetWidth / 2 // 球心x坐标
+        CY = paper.value.offsetHeight / 2 // 球心y坐标
         EX =
           paper.value.offsetLeft +
           document.body.scrollLeft +
@@ -121,11 +121,12 @@ export default defineComponent({
       for (var i = 0; i < tagEle.value!.length; i++) {
         var a, b
         var k = (2 * (i + 1) - 1) / tagEle.value!.length - 1
-        a = Math.acos(k)
-        b = a * Math.sqrt(tagEle.value!.length * Math.PI)
+        a = Math.acos(k) // Math.acos() 返回一个数的反余弦值（单位为弧度）
+        b = a * Math.sqrt(tagEle.value!.length * Math.PI) //计算标签相对于球心的角度
+        // Math.sqrt() 函数返回一个数的平方根
         // var a = Math.random()*2*Math.PI;
         // var b = Math.random()*2*Math.PI;
-        var x = RADIUS * Math.sin(a) * Math.cos(b)
+        var x = RADIUS * Math.sin(a) * Math.cos(b) //根据标签角度求出标签的x,y,z坐标
         var y = RADIUS * Math.sin(a) * Math.sin(b)
         var z = RADIUS * Math.cos(a)
         var t = new Tag(tagEle.value[i], x, y, z)
@@ -142,6 +143,7 @@ export default defineComponent({
       }
     }
 
+    // 纵向旋转
     function rotateX() {
       var cos = Math.cos(angleX)
       var sin = Math.sin(angleX)
@@ -152,6 +154,7 @@ export default defineComponent({
         that.z = z1
       })
     }
+    // 横向旋转
     function rotateY() {
       var cos = Math.cos(angleY)
       var sin = Math.sin(angleY)
@@ -164,6 +167,7 @@ export default defineComponent({
       })
     }
 
+    // 运动函数
     function animate() {
       setInterval(function () {
         rotateX()

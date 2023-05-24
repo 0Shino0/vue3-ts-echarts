@@ -90,7 +90,6 @@ export default defineComponent({
             },
             label: {
               position: 'auto',
-
               interval: 0, //坐标轴刻度标签的显示间隔(在类目轴中有效) 0:显示所有  1：隔一个显示一个 :3：隔三个显示一个...
               // rotate: -20, //标签倾斜的角度，显示不全时可以通过旋转防止标签重叠（-90到90）
             },

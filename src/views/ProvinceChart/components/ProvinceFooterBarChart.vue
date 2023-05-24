@@ -242,7 +242,8 @@ export default defineComponent({
           {
             name: '碳排放总量',
             type: 'bar',
-            data: [30, 32, 33, 33, 34, 34.8, 36, 35.7, 35.3],
+            // data: [30, 32, 33, 33, 34, 34.8, 36, 35.7, 35.3],
+            data: [30, 31.2, 32.3, 34.1, 36.3, 36.8, 37.2, 37.5],
             boundaryGap: '45%',
             barWidth: '40%',
             itemStyle: {
