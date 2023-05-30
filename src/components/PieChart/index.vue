@@ -40,7 +40,7 @@ export default defineComponent({
     // 在使用 setup 的情况下，请牢记一点：不能再用 this 来获取 Vue 实例
 
     const chart = ref<HTMLElement>()
-    const pieCharts = ref()
+    const timeLinePieTechCharts = ref()
 
     // 生命周期钩子
     onMounted(() => {
@@ -48,27 +48,29 @@ export default defineComponent({
         initChart()
       })
       // window.onresize = function () {
-      //   pieCharts.value.resize()
+      //   timeLinePieTechCharts.value.resize()
       // }
       const windowOnresizeEvent = () => {
-        if (pieCharts.value) pieCharts.value.resize()
+        if (timeLinePieTechCharts.value) timeLinePieTechCharts.value.resize()
       }
 
       $bus.on('windowOnresize', windowOnresizeEvent)
     })
 
     onBeforeUnmount(() => {
-      if (!pieCharts.value) {
+      if (!timeLinePieTechCharts.value) {
         return
       }
-      pieCharts.value.dispose()
-      pieCharts.value = null
+      timeLinePieTechCharts.value.dispose()
+      timeLinePieTechCharts.value = null
     })
 
     // 方法 methods
 
     const initChart = () => {
-      pieCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      timeLinePieTechCharts.value = markRaw(
+        echarts.init(chart.value!, 'bgYellow')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -119,7 +121,6 @@ export default defineComponent({
       //     },
       //   ],
       // }
-
       let option = {
         animation: true,
         animationThreshold: 2000,
@@ -352,7 +353,7 @@ export default defineComponent({
         },
       }
 
-      pieCharts.value.setOption(option)
+      timeLinePieTechCharts.value.setOption(option)
     }
 
     // 计算方法 computed
@@ -370,7 +371,7 @@ export default defineComponent({
 <template>
   <div
     :class="className"
-    class="piechart-container"
+    class="timeLinePieTechchart-container"
     :ref="className"
     :style="{ height: height, width: width }"
   />

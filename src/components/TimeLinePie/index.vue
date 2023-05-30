@@ -68,7 +68,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      timeLinePieCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      timeLinePieCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -87,7 +87,6 @@ export default defineComponent({
             data: ['十八大', '十九大', '二十大', '两会'],
           },
           grid: { containLabel: true },
-
           series: [
             {
               type: 'pie',

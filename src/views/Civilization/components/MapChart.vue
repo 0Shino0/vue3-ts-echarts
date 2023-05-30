@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      mapCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      mapCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -80,14 +80,17 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '全国各省市旅游人数（亿人）',
-          subtext: '数据来源：中国旅游研究院',
+          text: '2021年全国各省市旅游人数（亿人）',
+          subtext:
+            '数据来源：中国旅游研究院 \n 地图来源：高德地图（GeoJSON） | 审图号：2022 高德软件 GS京(2022)1061号',
+          sublink:
+            'http://datav.aliyun.com/portal/school/atlas/area_selector#&lat=33.521903996156105&lng=104.29849999999999&zoom=4',
           x: 'center',
-          top: '20px',
+          // top: '20px',
         },
         tooltip: {
           trigger: 'item',
-          formatter: '{b}<br/>{c} 亿人',
+          formatter: '2021年<br/> {b}：{c} 亿人',
         },
         toolbox: {
           show: true,
@@ -123,39 +126,37 @@ export default defineComponent({
               { name: '广西', value: 8 },
               { name: '河南', value: 7.9 },
               { name: '江西', value: 7.4 },
-              { name: '西藏', value: 1.2 },
-              { name: '新疆', value: 1.9 },
-              { name: '云南', value: 5.1 },
-              { name: '贵州', value: 6.4 },
-              { name: '青海', value: 0.3 },
-              { name: '甘肃', value: 2.8 },
-              { name: '陕西', value: 4.6 },
-              { name: '内蒙古', value: 1.3 },
-              { name: '山西', value: 2.5 },
-              { name: '湖南', value: 6.3 },
-              { name: '湖北', value: 2.8 },
-              { name: '河北', value: 4.5 },
-              { name: '重庆', value: 5.8 },
-              { name: '黑龙江', value: 1.6 },
-              //
-              { name: '四川', value: 3.8 },
-              { name: '宁夏', value: 1.6 },
-              { name: '辽宁', value: 3.8 },
-              { name: '北京', value: 2.6 },
-              { name: '河北', value: 4.5 },
-              { name: '天津', value: 4.9 },
               { name: '山东', value: 7.3 },
               { name: '江苏', value: 7.1 },
-              { name: '安徽', value: 5.8 },
-              { name: '上海', value: 3 },
+              { name: '贵州', value: 6.4 },
+              { name: '湖南', value: 6.3 },
               { name: '浙江', value: 6.2 },
-              { name: '福建', value: 4.1 },
-              { name: '台湾', value: 2 },
+              { name: '云南', value: 6.2 },
+              { name: '安徽', value: 5.8 },
               { name: '广东', value: 5.7 },
-              { name: '澳门', value: 2.1 },
-              { name: '香港', value: 2.2 },
-              { name: '海南', value: 3.2 },
+              { name: '四川', value: 4.8 },
+              { name: '河北', value: 4.3 },
+              { name: '福建', value: 4.1 },
+              { name: '陕西', value: 3.9 },
+              { name: '重庆', value: 3.5 },
+              { name: '辽宁', value: 3 },
+              { name: '上海', value: 3 },
+              { name: '甘肃', value: 2.8 },
+              { name: '北京', value: 2.6 },
               { name: '吉林', value: 2.1 },
+              { name: '山西', value: 2.0 },
+              { name: '天津', value: 1.9 },
+              { name: '新疆', value: 1.9 },
+              { name: '黑龙江', value: 1.6 },
+              { name: '内蒙古', value: 1.3 },
+              { name: '海南', value: 0.8 },
+              { name: '西藏', value: 0.4 },
+              { name: '青海', value: 0.4 },
+              { name: '宁夏', value: 0.16 },
+              { name: '湖北', value: 0.08 },
+              { name: '澳门', value: 0.07 },
+              { name: '台湾', value: 0.0014 },
+              { name: '香港', value: 0.0009 },
             ],
             // 自定义名称映射
             // nameMap: {

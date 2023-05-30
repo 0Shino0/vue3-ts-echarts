@@ -71,7 +71,9 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      provertyAnnularCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      provertyAnnularCharts.value = markRaw(
+        echarts.init(chart.value!, 'bgYellow')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -83,24 +85,25 @@ export default defineComponent({
           text: '精准扶贫',
           left: 'center',
         },
+        color: ['#DD1D1D', '#ff2400', '#b11717', '#ca3030', '#e85050'],
         tooltip: {
           // trigger: `item`
-          formatter: '{a}<br/>{b} : {c}',
+          formatter: '{a}<br/>{b} : {c}%',
         },
         legend: {
           top: 'bottom',
         },
-        toolbox: {
-          orient: 'vertical',
-          left: 'right',
-          top: 'center',
-          feature: {
-            dataView: { show: true, readOnly: false },
-            magicType: { show: true, type: ['line', 'bar'] },
-            restore: { show: true },
-            saveAsImage: { show: true },
-          },
-        },
+        // toolbox: {
+        //   orient: 'vertical',
+        //   left: 'right',
+        //   top: 'center',
+        //   feature: {
+        //     dataView: { show: true, readOnly: false },
+        //     magicType: { show: true, type: ['line', 'bar'] },
+        //     restore: { show: true },
+        //     saveAsImage: { show: true },
+        //   },
+        // },
         series: [
           {
             name: '精准扶贫',
@@ -112,7 +115,11 @@ export default defineComponent({
             //   borderRadius: 8
             // },
             data: [
-              { value: 45.38, name: '就业与异地搬迁' },
+              {
+                value: 45.38,
+                name: `就业与异地搬迁`,
+                label: { fontSize: 10 },
+              },
               { value: 19.48, name: '教育扶贫' },
               { value: 23.38, name: '产业发展' },
               { value: 11.26, name: '其他' },

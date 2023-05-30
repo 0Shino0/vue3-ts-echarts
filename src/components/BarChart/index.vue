@@ -52,7 +52,7 @@ export default defineComponent({
       //   barCharts.value.resize()
       // }
       const windowOnresizePopulationEvent = () => {
-        barCharts.value.resize()
+        if (barCharts.value) barCharts.value.resize()
       }
       $bus.on('windowOnresizePopulation', windowOnresizePopulationEvent)
     })
@@ -68,7 +68,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      barCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      barCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -119,12 +119,15 @@ export default defineComponent({
         animationDurationUpdate: 300,
         animationEasingUpdate: 'cubicOut',
         animationDelayUpdate: 0,
+        // color: ['#0000FF', '#DE1F1E'],
+
         series: [
           {
             type: 'bar',
-            name: '中国国内生产总量',
+            name: '中国国内生产总值',
             yAxisIndex: 0,
             legendHoverLink: true,
+            color: '#DD1D1D',
             data: [
               // 7.5547,
               8.532, 9.5744, 10.4767, 11.06, 11.237, 12.3232, 13.8919, 14.3004,
@@ -149,9 +152,11 @@ export default defineComponent({
           },
           {
             type: 'bar',
-            name: '美国国内生产总量',
+            name: '美国国内生产总值',
             yAxisIndex: 0,
             legendHoverLink: true,
+            // color: '#0032E8',
+            color: '#0028ba',
             data: [
               // 15.5426,
               16.197, 16.7849, 17.5273, 18.2383, 18.7451, 19.543, 20.6119,
@@ -230,7 +235,8 @@ export default defineComponent({
           {
             type: 'line',
             name: '美国国内生产总值增速',
-            color: '#FAC858',
+            // color: '#FAC858',
+            color: '#0028ba',
             connectNulls: false,
             yAxisIndex: 1,
             symbolSize: 4,
@@ -284,14 +290,14 @@ export default defineComponent({
         legend: [
           {
             data: [
-              '中国国内生产总量',
-              '美国国内生产总量',
+              '中国国内生产总值',
+              '美国国内生产总值',
               '中国国内生产总值增速',
               '美国国内生产总值增速',
             ],
             selected: {
-              中国国内生产总量: true,
-              美国国内生产总量: true,
+              中国国内生产总值: true,
+              美国国内生产总值: true,
               中国国内生产总值增速: true,
               美国国内生产总值增速: true,
             },
@@ -365,6 +371,7 @@ export default defineComponent({
             nameLocation: 'end',
             nameGap: 15,
             gridIndex: 0,
+
             axisLine: {
               show: true,
               onZero: true,
@@ -389,7 +396,7 @@ export default defineComponent({
             offset: 0,
             splitNumber: 5,
             min: 0,
-            max: 25,
+            // max: 50,
             minInterval: 0,
             splitLine: {
               show: false,
@@ -449,8 +456,10 @@ export default defineComponent({
         ],
         title: [
           {
-            text: '中美十年国内生产总值',
-            subtext: '数据来源世界银行',
+            // text: '中美十年国内生产总值',
+            // text: '中美十年GDP对比',
+            text: '中美GDP对比',
+            subtext: '数据来源：世界银行',
             padding: 5,
             itemGap: 10,
           },
@@ -461,6 +470,9 @@ export default defineComponent({
             zlevel: 0,
             z: 2,
             left: '5%',
+            right: '10%',
+            bottom: '4%',
+            // left: '5%',
             // right: '20%',
             containLabel: false,
             backgroundColor: 'transparent',

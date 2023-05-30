@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      radarCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      radarCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -98,7 +98,7 @@ export default defineComponent({
             { name: '2020', max: 16000 },
             { name: '2021', max: 30000 },
             { name: '2022', max: 38000 },
-            { name: '2023', max: 52000 },
+            // { name: '2023', max: 52000 },
           ],
         },
         series: [

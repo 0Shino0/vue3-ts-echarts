@@ -30,11 +30,11 @@ export default defineComponent({
 
 <template>
   <div class="wordcloud-container">
-    <div class="wordcloud-header">
+    <!-- <div class="wordcloud-header">
       <div class="wordcloud-header-img">
         <img src="@/assets/img/20people.jpg" alt="20届全国人大" />
       </div>
-    </div>
+    </div> -->
     <WordCloud />
     <EchartsWord />
   </div>
@@ -44,13 +44,15 @@ export default defineComponent({
 .wordcloud-container {
   // margin-top: 64px;
 
-  background-image: linear-gradient(
-    to left bottom,
-    #fefbf2,
-    #f6d9ae,
-    #f59657,
-    #d5110d
-  );
+  // background-image: linear-gradient(
+  //   to left bottom,
+  //   #fefbf2,
+  //   #f6d9ae,
+  //   #f59657,
+  //   #d5110d
+  // );
+  // background-color: #FFF1BA;
+  background-color: #fff1ba;
 
   .wordcloud-header {
     .wordcloud-header-img {

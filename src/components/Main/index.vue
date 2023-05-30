@@ -50,7 +50,8 @@ body {
   // overflow: hidden;
   font-size: 14px;
   font-family: Arial, sans-serif;
-  background-color: #041527;
+  // background-color: #041527;
+  background-color: #fff1ba;
 }
 ul,
 p {

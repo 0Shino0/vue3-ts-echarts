@@ -37,7 +37,7 @@ export default defineComponent({
         <li class="home_nav_text">词云</li>
       </router-link>
       <router-link to="/timeline" class="home_nav_item">
-        <li class="home_nav_text">时间轴</li>
+        <li class="home_nav_text">四个现代化</li>
       </router-link>
       <router-link to="/population" class="home_nav_item">
         <li class="home_nav_text">人口规模</li>
@@ -48,11 +48,11 @@ export default defineComponent({
       <router-link to="/civilization" class="home_nav_item">
         <li class="home_nav_text">物质文明与精神文明</li>
       </router-link>
-      <router-link to="/nature" class="home_nav_item">
-        <li class="home_nav_text">人与自然</li>
-      </router-link>
       <router-link to="/peace" class="home_nav_item">
         <li class="home_nav_text">和平发展</li>
+      </router-link>
+      <router-link to="/nature" class="home_nav_item">
+        <li class="home_nav_text">人与自然</li>
       </router-link>
     </ul>
   </div>
@@ -112,7 +112,7 @@ export default defineComponent({
       flex-shrink: 1;
       // margin-left: 50px;
       // padding: var(--w-space-sm) var(--w-space-lg);
-      padding: var(--w-space-sm) var(--w-space-sm);
+      padding: var(--w-space-sm) 32px;
       cursor: pointer;
 
       li {

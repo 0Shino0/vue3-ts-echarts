@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      mapCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      mapCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -79,13 +79,19 @@ export default defineComponent({
 
     const setOptions = () => {
       let option = {
-        title: {
-          // text: '全国34省市区的832个贫困县分布图',
-          text: '中国国家级贫困地区与非贫困地区分布图',
-          subtext: '数据来源：中华⼈⺠共乐和国中央⼈⺠政府、中国减贫研究数据库',
-          x: 'center',
-          top: '20px',
-        },
+        title: [
+          {
+            // text: '全国34省市区的832个贫困县分布图',
+            text: '中国国家级贫困地区与非贫困地区分布图',
+            subtext:
+              '数据来源：中华人民共和国中央人民政府、中国减贫研究数据库\n 地图来源：高德地图（GeoJSON） | 审图号：2022 高德软件 GS京(2022)1061号',
+            sublink:
+              'http://datav.aliyun.com/portal/school/atlas/area_selector#&lat=33.521903996156105&lng=104.29849999999999&zoom=4',
+            x: 'center',
+            top: '0%',
+          },
+        ],
+
         tooltip: {
           trigger: 'item',
           formatter: function (params: any) {
@@ -103,7 +109,7 @@ export default defineComponent({
               params.name +
               '<br/>' +
               dotHtml +
-              '贫困县总数：' +
+              '贫困地区数量：' +
               data.value +
               '<br/>' +
               dotHtml2 +
@@ -111,8 +117,9 @@ export default defineComponent({
               data.value2 +
               '<br/>' +
               dotHtml +
-              '贫困地区数量：' +
+              '下辖地区总数：' +
               data.value3
+
             return result
           },
           // '{b}<br/>贫困县总数：{c} <br/> 非贫困地区数量：{d} <br/>贫困地区数量：{e}',
@@ -130,7 +137,7 @@ export default defineComponent({
         },
         visualMap: {
           min: 0,
-          max: 400,
+          max: 200,
           show: false,
           text: ['High', 'Low'],
           realtime: false,
@@ -148,44 +155,44 @@ export default defineComponent({
               show: true,
             },
             data: [
-              { name: '北京', value: 16, value2: 16, value3: 0 },
-              { name: '天津', value: 16, value2: 16, value3: 0 },
-              { name: '河北', value: 168, value2: 123, value3: 45 },
-              { name: '山西', value: 117, value2: 81, value3: 36 },
-              { name: '内蒙古', value: 103, value2: 72, value3: 31 },
-              { name: '辽宁', value: 100, value2: 100, value3: 0 },
-              { name: '吉林', value: 60, value2: 52, value3: 8 },
-              { name: '黑龙江', value: 125, value2: 104, value3: 21 },
-              { name: '上海', value: 16, value2: 16, value3: 0 },
-              { name: '江苏', value: 95, value2: 95, value3: 0 },
-              { name: '浙江', value: 90, value2: 90, value3: 0 },
-              { name: '安徽', value: 104, value2: 84, value3: 20 },
-              { name: '福建', value: 85, value2: 85, value3: 0 },
-              { name: '江西', value: 100, value2: 76, value3: 24 },
-              { name: '山东', value: 136, value2: 136, value3: 0 },
-              { name: '河南', value: 158, value2: 120, value3: 38 },
-              // d
-              { name: '湖北', value: 103, value2: 75, value3: 28 },
-              { name: '湖南', value: 122, value2: 82, value3: 40 },
-              { name: '广东', value: 125, value2: 125, value3: 0 },
-              { name: '广西', value: 111, value2: 78, value3: 33 },
-              { name: '海南', value: 27, value2: 22, value3: 5 },
-              { name: '重庆', value: 38, value2: 24, value3: 14 },
-              { name: '四川', value: 183, value2: 117, value3: 66 },
-              { name: '贵州', value: 88, value2: 22, value3: 66 },
-              { name: '云南', value: 129, value2: 41, value3: 88 },
-              { name: '西藏', value: 74, value2: 0, value3: 74 },
-              { name: '陕西', value: 107, value2: 51, value3: 56 },
-              { name: '甘肃', value: 87, value2: 29, value3: 58 },
-              { name: '青海', value: 45, value2: 4, value3: 41 },
-              { name: '宁夏', value: 22, value2: 14, value3: 8 },
-              { name: '新疆', value: 106, value2: 74, value3: 32 },
-              { name: '台湾', value: 172, value2: 172, value3: 0 },
-              { name: '香港', value: 18, value2: 18, value3: 0 },
-              { name: '澳门', value: 8, value2: 8, value3: 0 },
+              // value 贫困地区数量 value2非贫困地区 value3贫困县地区
+              { name: '北京', value: 0, value3: 16, value2: 16 },
+              { name: '天津', value: 0, value3: 16, value2: 16 },
+              { name: '河北', value: 45, value3: 168, value2: 123 },
+              { name: '山西', value: 36, value3: 117, value2: 81 },
+              { name: '内蒙古', value: 31, value3: 103, value2: 72 },
+              { name: '辽宁', value: 0, value3: 100, value2: 100 },
+              { name: '吉林', value: 8, value3: 60, value2: 52 },
+              { name: '黑龙江', value: 21, value3: 125, value2: 104 },
+              { name: '上海', value: 0, value3: 16, value2: 16 },
+              { name: '江苏', value: 0, value3: 95, value2: 95 },
+              { name: '浙江', value: 0, value3: 90, value2: 90 },
+              { name: '安徽', value: 20, value3: 104, value2: 84 },
+              { name: '福建', value: 0, value3: 85, value2: 85 },
+              { name: '江西', value: 24, value3: 100, value2: 76 },
+              { name: '山东', value: 0, value3: 136, value2: 136 },
+              { name: '河南', value: 38, value3: 158, value2: 120 },
+              { name: '湖北', value: 28, value3: 103, value2: 75 },
+              { name: '湖南', value: 40, value3: 122, value2: 82 },
+              { name: '广东', value: 0, value3: 125, value2: 125 },
+              { name: '广西', value: 33, value3: 111, value2: 78 },
+              { name: '海南', value: 5, value3: 27, value2: 22 },
+              { name: '重庆', value: 14, value3: 38, value2: 24 },
+              { name: '四川', value: 66, value3: 183, value2: 117 },
+              { name: '贵州', value: 66, value3: 88, value2: 22 },
+              { name: '云南', value: 88, value3: 129, value2: 41 },
+              { name: '西藏', value: 74, value3: 74, value2: 0 },
+              { name: '陕西', value: 56, value3: 107, value2: 51 },
+              { name: '甘肃', value: 58, value3: 87, value2: 29 },
+              { name: '青海', value: 41, value3: 45, value2: 4 },
+              { name: '宁夏', value: 8, value3: 22, value2: 14 },
+              { name: '新疆', value: 32, value3: 106, value2: 74 },
+              { name: '台湾', value: 0, value3: 172, value2: 172 },
+              { name: '香港', value: 0, value3: 18, value2: 18 },
+              { name: '澳门', value: 0, value3: 8, value2: 8 },
+              { name: '十段线', value: 0, value3: 0, value2: 0 },
+              { name: '南海诸岛', value: 0, value3: 0, value2: 0 },
               // { name: '吉林', value: 1234 },
-              { name: '十段线', value: 0, value2: 0, value3: 0 },
-              { name: '南海诸岛', value: 0, value2: 0, value3: 0 },
             ],
             // data: [
             //   { name: '西藏', value: 50201.34 },

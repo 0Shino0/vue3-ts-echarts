@@ -82,9 +82,10 @@ export default defineComponent({
     const setOptions = () => {
       let option = {
         title: {
-          text: '中国人口对比',
-          subtext: '数据来源联合国统计局',
+          text: '中美人口对比（人）',
+          subtext: '数据来源：联合国统计局',
         },
+        color: ['#0000FF', '#DE1F1E'],
         tooltip: {
           trigger: 'axis',
           axisPointer: {
@@ -93,9 +94,41 @@ export default defineComponent({
               backgroundColor: '#6a7985',
             },
           },
+          // formatter: '{b}<br/> {a1}：{c1} <br/> {a0}：{c0}',
+          formatter: function (params: any) {
+            console.log(params)
+            // const dataUsa = params[0].data
+            // const dataChina = params[1].data
+            // const data = undefined
+            // if (!data) return
+
+            var dotHtml =
+              '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:8px;height:8px;background-color:#DD1D1D"></span>' // 定义第一个数据前的圆点颜色
+            var dotHtml2 =
+              '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:8px;height:8px;background-color:#0028ba"></span>' // 定义第二个数据前的圆点颜色
+
+            var result =
+              params[1].name +
+              '<br/>' +
+              dotHtml +
+              params[1].seriesName +
+              '：' +
+              params[1].value +
+              '<br/>' +
+              dotHtml2 +
+              params[0].seriesName +
+              '：' +
+              params[0].value +
+              '<br/>'
+            return result
+          },
         },
         legend: {
-          data: ['德国', '日本', '美国', '中国', '印度', '法国'],
+          data: [
+            '美国',
+            '中国',
+            // '德国', '日本', '印度', '法国'
+          ],
           left: 'right',
         },
         // toolbox: {
@@ -106,14 +139,22 @@ export default defineComponent({
         grid: {
           left: '3%',
           right: '4%',
-          bottom: '3%',
+          bottom: '0%',
           containLabel: true,
         },
         xAxis: [
           {
             type: 'category',
             boundaryGap: false,
-            data: ['1950', '1970', '1990', '2000', '2010', '2020', '2023'],
+            data: [
+              '1950',
+              '1970',
+              '1990',
+              '2000',
+              '2010',
+              '2020',
+              // '2023'
+            ],
           },
         ],
         yAxis: [
@@ -123,62 +164,10 @@ export default defineComponent({
         ],
         series: [
           {
-            name: '德国',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            itemStyle: {
-              normal: {
-                color: '#8DC14A',
-                lineStyle: {
-                  // color: '#00C6FF',
-                  width: 2,
-                },
-              },
-            },
-            emphasis: {
-              focus: 'series',
-            },
-            data: [
-              136749144, 106749144, 96749144, 90749144, 89749144, 85749144,
-              84271000,
-            ],
-          },
-          {
-            name: '法国',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series',
-            },
-            data: [
-              42517690, 49517690, 50517690, 60517690, 61517690, 65517690,
-              68043000,
-            ],
-          },
-          {
-            name: '日本',
-            type: 'line',
-            stack: 'Total',
-            areaStyle: {},
-            emphasis: {
-              focus: 'series',
-            },
-            data: [
-              83805000, 93805000, 103805000, 113805000, 113805000, 123805000,
-              124490000,
-            ],
-          },
-          {
             name: '美国',
             type: 'line',
             stack: 'Total',
-            label: {
-              show: true,
-              position: 'top',
-            },
-
+            color: '#0028ba',
             areaStyle: {},
             emphasis: {
               focus: 'series',
@@ -189,37 +178,14 @@ export default defineComponent({
             ],
           },
           {
-            name: '印度',
-            type: 'line',
-            stack: 'Total',
-            label: {
-              show: true,
-              position: 'top',
-            },
-            itemStyle: {
-              normal: {
-                color: '#00C6FF',
-                lineStyle: {
-                  // color: '#00C6FF',
-                  width: 2,
-                },
-              },
-            },
-            areaStyle: {},
-            emphasis: {
-              focus: 'series',
-            },
-            data: [
-              369880000, 509200000, 709200000, 809200000, 909200000, 1209200000,
-              1409200000,
-            ],
-          },
-
-          {
             name: '中国',
             type: 'line',
             stack: 'Total',
             areaStyle: {},
+            label: {
+              show: true,
+              position: 'left',
+            },
             itemStyle: {
               normal: {
                 color: '#BC252F',
@@ -237,6 +203,80 @@ export default defineComponent({
               1400750000, 1411750000,
             ],
           },
+          // {
+          //   name: '印度',
+          //   type: 'line',
+          //   stack: 'Total',
+          //   label: {
+          //     show: true,
+          //     position: 'top',
+          //   },
+          //   itemStyle: {
+          //     normal: {
+          //       color: '#00C6FF',
+          //       lineStyle: {
+          //         // color: '#00C6FF',
+          //         width: 2,
+          //       },
+          //     },
+          //   },
+          //   areaStyle: {},
+          //   emphasis: {
+          //     focus: 'series',
+          //   },
+          //   data: [
+          //     369880000, 509200000, 709200000, 809200000, 909200000, 1209200000,
+          //     1409200000,
+          //   ],
+          // },
+          // {
+          //   name: '德国',
+          //   type: 'line',
+          //   stack: 'Total',
+          //   areaStyle: {},
+          //   itemStyle: {
+          //     normal: {
+          //       color: '#8DC14A',
+          //       lineStyle: {
+          //         // color: '#00C6FF',
+          //         width: 2,
+          //       },
+          //     },
+          //   },
+          //   emphasis: {
+          //     focus: 'series',
+          //   },
+          //   data: [
+          //     136749144, 106749144, 96749144, 90749144, 89749144, 85749144,
+          //     84271000,
+          //   ],
+          // },
+          // {
+          //   name: '法国',
+          //   type: 'line',
+          //   stack: 'Total',
+          //   areaStyle: {},
+          //   emphasis: {
+          //     focus: 'series',
+          //   },
+          //   data: [
+          //     42517690, 49517690, 50517690, 60517690, 61517690, 65517690,
+          //     68043000,
+          //   ],
+          // },
+          // {
+          //   name: '日本',
+          //   type: 'line',
+          //   stack: 'Total',
+          //   areaStyle: {},
+          //   emphasis: {
+          //     focus: 'series',
+          //   },
+          //   data: [
+          //     83805000, 93805000, 103805000, 113805000, 113805000, 123805000,
+          //     124490000,
+          //   ],
+          // },
         ],
       }
 
@@ -256,19 +296,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="population-container">
+  <div class="population-container" style="width: 100%">
     <div
       class="pupulation-linecharts-container"
-      style="width: 100%; height: 600px"
+      style="width: 100%; height: 60vh"
     >
       <div
         class="population-line-charts"
         ref="chart"
-        style="width: 100%; height: 600px"
+        style="width: 100%; height: 60vh"
       ></div>
     </div>
 
-    <div class="timeline-echarts-item" style="width: 100%; height: 600px">
+    <div class="pupulation-bar-chart" style="width: 100%; height: 60vh">
       <bar-chart></bar-chart>
     </div>
   </div>
@@ -277,12 +317,18 @@ export default defineComponent({
 <style lang="less">
 .population-container {
   // margin-top: 64px;
-  background-color: #fff;
+  height: calc(100vh - 64px);
+  background-color: #fff1ba;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 .pupulation-linecharts-container {
-  padding-top: 20px;
+  // padding-top: 20px;
+  // bottom: 0;
 }
 
 .population-line-charts {
+  // padding-top: 20px;
 }
 </style>

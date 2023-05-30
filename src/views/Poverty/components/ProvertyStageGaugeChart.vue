@@ -73,7 +73,7 @@ export default defineComponent({
 
     const initChart = () => {
       provertyStageGaugeChartCharts.value = markRaw(
-        echarts.init(chart.value!, 'roma')
+        echarts.init(chart.value!, 'bgYellow')
       )
       // setOptions(props.chartData)
 
@@ -81,64 +81,128 @@ export default defineComponent({
     }
 
     const setOptions = () => {
+      const gaugeData = [
+        {
+          value: 3.4,
+          name: '2016年',
+          title: {
+            offsetCenter: ['-80%', '80%'],
+          },
+          detail: {
+            offsetCenter: ['-80%', '95%'],
+          },
+        },
+        // {
+        //   value: 18.4,
+        //   name: '2017年',
+        //   title: {
+        //     offsetCenter: ['-40%', '80%'],
+        //   },
+        //   detail: {
+        //     offsetCenter: ['-40%', '95%'],
+        //   },
+        // },
+        {
+          value: 52.4,
+          name: '2018年',
+          title: {
+            offsetCenter: ['0%', '80%'],
+          },
+          detail: {
+            offsetCenter: ['0%', '95%'],
+          },
+        },
+        // {
+        //   value: 93.8,
+        //   name: '2019年',
+        //   title: {
+        //     offsetCenter: ['40%', '80%'],
+        //   },
+        //   detail: {
+        //     offsetCenter: ['40%', '95%'],
+        //   },
+        // },
+        {
+          value: 100,
+          name: '2020年',
+          title: {
+            offsetCenter: ['80%', '80%'],
+          },
+          detail: {
+            offsetCenter: ['80%', '95%'],
+          },
+        },
+      ]
       let option = {
         title: {
           text: '精准扶贫工作完成情况',
           left: 'center',
         },
+        color: ['#DD1D1D', '#ff2400', '#DD1D1D', '#ca3030', '#e85050'],
+        tooltip: {
+          trigger: 'item',
+          formatter: '{b} <br/> 脱贫进度：{c}%',
+        },
         series: [
           {
             type: 'gauge',
-            axisLine: {
-              lineStyle: {
-                width: 25,
-                color: [
-                  [0.3, '#37a2da'],
-                  [0.7, '#67e0e3'],
-                  [1, '#fd666d'],
-                ],
+            anchor: {
+              show: true,
+              showAbove: true,
+              size: 18,
+              itemStyle: {
+                color: '#FAC858',
               },
             },
             pointer: {
-              itemStyle: {
-                color: 'inherit',
-              },
+              icon: 'path://M2.9,0.7L2.9,0.7c1.4,0,2.6,1.2,2.6,2.6v115c0,1.4-1.2,2.6-2.6,2.6l0,0c-1.4,0-2.6-1.2-2.6-2.6V3.3C0.3,1.9,1.4,0.7,2.9,0.7z',
+              width: 8,
+              length: '80%',
+              offsetCenter: [0, '8%'],
             },
-            axisTick: {
-              distance: -30,
-              length: 8,
-              lineStyle: {
-                color: '#fff',
-                width: 2,
-              },
+            progress: {
+              show: true,
+              overlap: true,
+              roundCap: true,
             },
-            splitLine: {
-              distance: -30,
-              length: 30,
-              lineStyle: {
-                color: '#fff',
-                width: 4,
-              },
+            axisLine: {
+              roundCap: true,
             },
-            axisLabel: {
-              color: 'inherit',
-              distance: 40,
-              fontSize: 16,
+            data: gaugeData,
+            title: {
+              show: true,
+              fontSize: 14,
+              // fontSize: 0
+            },
+            label: {
+              show: true,
+              position: 'center',
             },
             detail: {
-              valueAnimation: true,
-              formatter: '{value} %',
-              color: 'inherit',
-              fontSize: 24,
+              show: true,
+              width: 40,
+              height: 14,
+              fontSize: 14,
+              color: '#fff',
+              backgroundColor: 'inherit',
+              borderRadius: 3,
+              formatter: '{value}%',
             },
-            data: [
-              {
-                value: 99,
-              },
-            ],
           },
         ],
       }
+      // setInterval(function () {
+      // gaugeData[0].value = +(Math.random() * 100).toFixed(2);
+      // gaugeData[1].value = +(Math.random() * 100).toFixed(2);
+      // gaugeData[2].value = +(Math.random() * 100).toFixed(2);
+      // myChart.setOption({
+      //   series: [
+      //     {
+      //       data: gaugeData
+      //     }
+      //   ]
+      // });
+      // }, 2000);
 
       provertyStageGaugeChartCharts.value.setOption(option)
     }

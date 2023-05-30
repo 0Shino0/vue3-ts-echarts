@@ -10,7 +10,6 @@ import {
 } from 'vue'
 
 import * as echarts from 'echarts'
-
 import $bus from '@/libs/eventBus'
 
 export default defineComponent({
@@ -126,7 +125,6 @@ export default defineComponent({
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
         },
-
         // color: ['#70a3ff', '#ff7f4e'],
         legend: {
           orient: 'vertical',
@@ -146,7 +144,8 @@ export default defineComponent({
             name: '',
             type: 'pie',
             selectedMode: 'single',
-            radius: ['45%', '55%'],
+            // radius: ['45%', '55%'],
+            radius: ['50%', '70%'],
             center: ['50%', '30%'],
             data: [
               { value: 2030, name: '碳达峰目标年' },
@@ -215,7 +214,7 @@ export default defineComponent({
         legend: {
           orient: 'vertical',
           x: 'center',
-          bottom: '-5%',
+          bottom: '-2%',
           selectedMode: true,
           data: ['林业用地面积', '人工林面积'],
           show: true,
@@ -229,7 +228,8 @@ export default defineComponent({
             name: '绿地',
             type: 'pie',
             selectedMode: 'single',
-            radius: ['45%', '55%'],
+            // radius: ['45%', '55%'],
+            radius: ['50%', '70%'],
             center: ['50%', '30%'],
             data: [
               { value: 449.33, name: '林业用地面积' },
@@ -280,7 +280,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="provinceDoughnutCharts" style="width: 100%; height: 100%">
+  <div class="provinceDoughnutCharts" style="width: 30vw; height: 100%">
     <div class="provinceDoughnutCharts-left" ref="chartLeft"></div>
     <div class="provinceDoughnutCharts-right" ref="chartRight"></div>
   </div>
@@ -289,15 +289,22 @@ export default defineComponent({
 <style lang="less">
 .provinceDoughnutCharts {
   display: flex;
-  flex: 0.5;
+  // flex: auto;
+  // flex-shrink: 1;
 }
 
 .provinceDoughnutCharts-left {
-  width: 50%;
-  height: 50%;
+  // width: 50%;
+  width: 70vw;
+  height: 60%;
+  // height: 100%;
+  // flex: 70%;
 }
 .provinceDoughnutCharts-right {
-  width: 50%;
-  height: 50%;
+  // width: 50%;
+  width: 70vw;
+  height: 60%;
+  // flex: 70%;
+  // height: 100%;
 }
 </style>

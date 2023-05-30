@@ -71,7 +71,7 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      PeaceLineCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      PeaceLineCharts.value = markRaw(echarts.init(chart.value!, 'bgYellow'))
       // setOptions(props.chartData)
 
       setOptions()
@@ -108,7 +108,7 @@ export default defineComponent({
               ['2020年', 308379.34],
               ['2021年', 337494.67],
               ['2022年', 366002.26],
-              ['2023年', 520349.9],
+              // ['2023年', 520349.9],
             ],
             hoverAnimation: true,
             label: {

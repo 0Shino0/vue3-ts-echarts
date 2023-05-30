@@ -71,7 +71,9 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      peaceSunburstCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      peaceSunburstCharts.value = markRaw(
+        echarts.init(chart.value!, 'bgYellow')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -90,13 +92,17 @@ export default defineComponent({
         series: [
           {
             type: 'bar',
-            name: '\u4e2d\u56fd',
+            name: '中国',
             coordinateSystem: 'polar',
             symbolSize: 4,
-            data: [100, 130, 120, 150],
+            data: [
+              100, 130, 150,
+              // , 150
+            ],
             label: {
               show: true,
-              position: 'top',
+              // position: 'top',
+              position: 'bottom',
               margin: 8,
             },
             areaStyle: {
@@ -111,13 +117,18 @@ export default defineComponent({
           },
           {
             type: 'bar',
-            name: '\u7f8e\u56fd',
+            name: '美国',
             coordinateSystem: 'polar',
             symbolSize: 4,
-            data: [10, 0, 3, 5],
+            data: [
+              64, 50, 30,
+              // , 5
+            ],
             label: {
               show: true,
-              position: 'top',
+              // position: 'top',
+              position: 'left to bottom',
+              // left: 'center',
               margin: 8,
             },
             areaStyle: {
@@ -165,19 +176,27 @@ export default defineComponent({
         },
         radiusAxis: {
           type: 'category',
-          data: ['2020年', '2021年', '2022年', '2023年'],
+          data: [
+            '2020年',
+            '2021年',
+            '2022年',
+            // '2023年'
+          ],
           scale: false,
         },
         angleAxis: {
           clockwise: true,
-          max: 22,
+          max: 150,
           scale: false,
           splitNumber: 5,
         },
-        polar: {},
+        polar: {
+          radius: [30, '70%'],
+        },
         title: [
           {
-            text: '中美两国在疫情期间对外援助的对⽐',
+            text: '中美两国在疫情期间对外援助的对比',
+            subtext: '数据来源：国家统计局',
             padding: 5,
             itemGap: 10,
             x: 'center',

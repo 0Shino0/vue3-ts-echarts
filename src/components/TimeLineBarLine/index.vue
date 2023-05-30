@@ -71,7 +71,9 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      timeLineBarLineCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      timeLineBarLineCharts.value = markRaw(
+        echarts.init(chart.value!, 'bgYellow')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -138,7 +140,7 @@ export default defineComponent({
             type: 'value',
             name: '中央财政国防支出',
             // min: 0,
-            // max: 15000,
+            max: 30000,
             // interval: 1000,
             axisLabel: {
               formatter: '{value} ',
@@ -159,6 +161,11 @@ export default defineComponent({
           {
             name: '中央财政国防支出',
             type: 'bar',
+            color: '#DD1D1D',
+            // barWidth: '80%', //柱图宽度
+            // barWidth: '70%', //柱图宽度
+            barWidth: '60%', //柱图宽度
+            alignTicks: true, // 多y轴自动对齐
             tooltip: {
               valueFormatter: function (value: string | number) {
                 return value + ''

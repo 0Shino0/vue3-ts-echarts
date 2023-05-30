@@ -85,10 +85,17 @@ export default defineComponent({
     }
 
     const setOptions = () => {
+      // var test = '123'
+      // const t: any = {
+      //   黑龙江: [1, 2, 3],
+      // }
+
+      // t[test]
+
       let option = {
         title: {
           text: props.mapNameObj!.name + '能源消耗',
-          // subtext: '数据来源国家数据',
+          // subtext: '数据来源：国家数据',
           x: 'left',
           top: '0%',
           textStyle: {
@@ -107,15 +114,16 @@ export default defineComponent({
         legend: {
           right: '0',
           data: ['煤炭消费量/千万吨', '原油消费量/百万吨'],
+          orient: 'vertical',
           // textStyle: {
           //   color: '#00ffff',
           // },
         },
         grid: {
-          left: '8%',
+          left: '12%',
           right: '4%',
-          bottom: '3%',
-          top: '10%',
+          bottom: '8%',
+          top: '15%',
           containLabel: true,
         },
         xAxis: {
@@ -137,7 +145,7 @@ export default defineComponent({
           },
           axisLabel: {
             textStyle: {
-              color: '#fff',
+              // color: '#fff',
             },
             alignWithLabel: true,
             interval: 0,
@@ -178,7 +186,7 @@ export default defineComponent({
             '2020',
             '2021',
             '2022',
-            '2023',
+            // '2023',
           ],
           splitLine: {
             show: false,

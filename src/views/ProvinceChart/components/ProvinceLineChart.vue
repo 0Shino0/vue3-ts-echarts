@@ -92,8 +92,9 @@ export default defineComponent({
           x: 'left',
           // y: 'top',
           textStyle: {
-            color: '#6B6B6B',
-            fontSize: 13,
+            // color: '#fff',
+            fontWeight: 'bold',
+            fontSize: 14,
           },
         },
         tooltip: {
@@ -110,7 +111,6 @@ export default defineComponent({
         legend: {
           data: ['碳排放增速', 'GDP增速'],
           show: true,
-
           right: '15%',
           y: '0',
           textStyle: {
@@ -151,7 +151,7 @@ export default defineComponent({
             },
             axisLabel: {
               textStyle: {
-                color: '#fff',
+                // color: '#fff',
               },
               alignWithLabel: true,
               interval: 0,
@@ -181,14 +181,14 @@ export default defineComponent({
             type: 'line',
             smooth: true,
             symbol: 'roundRect',
-            data: [6, 5, 1, 0, 3, 2, 3, -1],
+            data: [0, 5.5, 4.9, 4.1, 3.5, 8, 4, 1.5],
           },
           {
             name: 'GDP增速',
             type: 'line',
             smooth: true,
             symbol: 'roundRect',
-            data: [12, 11, 9.5, 8.5, 9, 8.5, 7.5, 6],
+            data: [12, 11, 10, 9.5, 9, 8.5, 8.2, 8],
           },
         ],
       }

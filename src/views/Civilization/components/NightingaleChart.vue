@@ -68,7 +68,9 @@ export default defineComponent({
     // 方法 methods
 
     const initChart = () => {
-      pieNightingaleCharts.value = markRaw(echarts.init(chart.value!, 'roma'))
+      pieNightingaleCharts.value = markRaw(
+        echarts.init(chart.value!, 'bgYellow')
+      )
       // setOptions(props.chartData)
 
       setOptions()
@@ -81,12 +83,21 @@ export default defineComponent({
           subtext: '数据来源：企查查官网',
           left: 'center',
         },
+        color: [
+          '#DD1D1D',
+          '#ff2400',
+          '#b11717',
+          '#ca3030',
+          '#e85050',
+          '#ff0000',
+        ],
         legend: {
-          top: 'top',
           type: 'scroll',
-          orient: 'vertical',
-          left: '5px',
+          // orient: 'vertical',
+          left: 'center',
+          top: 'bottom',
         },
+
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)',
@@ -110,6 +121,7 @@ export default defineComponent({
             itemStyle: {
               borderRadius: 8,
             },
+            label: {},
             data: [
               { value: 2015, name: '2016年' },
               { value: 2726, name: '2017年' },

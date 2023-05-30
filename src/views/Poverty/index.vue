@@ -48,8 +48,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="proverty-container" style="width: 100%; height: 50vw">
-    <div class="proverty-map-container" style="width: 100vw; height: 44vw">
+  <div class="proverty-container" style="width: 100%; height: 100vh">
+    <div class="proverty-map-container" style="width: 100vw; height: 80vh">
       <map-chart></map-chart>
     </div>
 
@@ -76,7 +76,8 @@ export default defineComponent({
 <style lang="less">
 .proverty-container {
   // margin-top: 64px;
-  background-color: #fefefe;
+  // background-color: #fefefe;
+  background-color: #fff1ba;
   position: relative;
 
   .proverty-map-container {
@@ -99,7 +100,7 @@ export default defineComponent({
     height: 20vw;
     position: absolute;
     // top: 320px;
-    top: 24vw;
+    top: 50vh;
     // left: 30px;
     left: 0;
   }
@@ -116,7 +117,8 @@ export default defineComponent({
     height: 20vw;
     position: absolute;
     // top: 320px;
-    top: 24vw;
+    // top: 24vw;
+    top: 50vh;
     // right: 30px;
     right: 0;
   }

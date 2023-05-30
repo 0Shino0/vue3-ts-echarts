@@ -2,6 +2,7 @@
 import * as echarts from 'echarts';
 import 'echarts-wordcloud'; // 词云图
 import romaTheme from '@/assets/theme/roma.json'
+import romaYellowTheme from '@/assets/theme/romaYellow.json'
 import wonderlandTheme from '@/assets/theme/wonderland.json'
 import chinaJSON from '@/assets/data/china.json'
 
@@ -11,6 +12,7 @@ import chinaJSON from '@/assets/data/china.json'
 // console.log(romaTheme);
 console.log(chinaJSON);
 echarts.registerTheme('roma', romaTheme)
+echarts.registerTheme('bgYellow', romaYellowTheme)
 echarts.registerTheme('wonderland', wonderlandTheme)
 echarts.registerMap('china', chinaJSON as any)
 

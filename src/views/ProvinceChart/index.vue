@@ -67,8 +67,8 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="province-container" style="width: 100%; height: 44vw">
-    <div class="province-map-container" style="width: 100%; height: 30vw">
+  <div class="province-container" style="width: 100%">
+    <div class="province-map-container" style="width: 100%; height: 80vh">
       <province-chart
         v-if="mapName.name != ''"
         :mapNameObj="mapName"
@@ -107,16 +107,21 @@ export default defineComponent({
 <style lang="less">
 .province-container {
   // margin-top: 64px;
-  background-color: #fefefe;
+  // background-color: #fefefe;
+  background-color: #fff1ba;
   position: relative;
+  // height: calc(100vh + 64px);
+  height: 120vh;
 
   .province-map-container {
     position: absolute;
-    // margin-top: 50px;
+    // margin-top: 10vh;
+    top: 10vh;
   }
 
   .province-provinceline-container {
-    width: 23vw;
+    // width: 23vw;
+    width: 28vw;
     height: 20vw;
     position: absolute;
     // top: 30px;
@@ -127,6 +132,7 @@ export default defineComponent({
 
   .province-dynamiclist-container {
     width: 23vw;
+    //     width: 30vw;
     height: 20vw;
     position: absolute;
     // top: 50px;
@@ -134,15 +140,19 @@ export default defineComponent({
     left: 30px;
   }
   .province-provincedoughnut-container {
-    width: 25vw;
-    height: 23vw;
+    // width: 25vw;
+    width: 30vw;
+    // height: 23vw;
+    height: 30vw;
     position: absolute;
-    top: 28vw;
+    // top: 30vw;
+    top: 55vh;
     left: 30px;
     // bottom: 30px;
   }
   .province-provincebar-container {
-    width: 23vw;
+    // width: 23vw;
+    width: 30vw;
     height: 20vw;
     position: absolute;
     // top: 30px;
@@ -155,7 +165,7 @@ export default defineComponent({
     height: 20vw;
     position: absolute;
     // top: 20vw;
-    top: 22vw;
+    top: 50vh;
     right: 5px;
     // bottom: 30px;
   }

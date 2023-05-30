@@ -485,7 +485,10 @@ export default defineComponent({
       let option = {
         title: {
           text: '全国绿色发展',
-          subtext: '数据来源：中国森林资源报告',
+          subtext:
+            '数据来源：中国森林资源报告 \n 地图来源：高德地图（GeoJSON） | 审图号：2022 高德软件 GS京(2022)1061号',
+          sublink:
+            'http://datav.aliyun.com/portal/school/atlas/area_selector#&lat=33.521903996156105&lng=104.29849999999999&zoom=4',
           x: 'center',
           top: '20px',
         },

@@ -3,6 +3,7 @@
 import { defineComponent, onMounted, ref, inject, nextTick } from 'vue'
 
 import chinaImgUrl from '@/assets/img/china.png'
+// import chinaImgUrl from '@/assets/img/china.jpg'
 
 // 引入echarts
 import * as echarts from 'echarts'
@@ -67,11 +68,14 @@ export default defineComponent({
     // 设置charts
     const chartSetOption = () => {
       var keywords: any = {
-        现代化: 74470,
+        现代化: 34490,
+        人民: 64470,
+        中国共产党: 64580,
         共同富裕: 13200,
         可持续: 3487,
         绿色: 3294,
-        '互联网+': 600,
+        听党指挥: 11860,
+        中华民族: 25601,
         新征程: 8706,
         新发展理念: 3391,
         高质量发展: 3616,
@@ -90,9 +94,8 @@ export default defineComponent({
         协商议政: 2484,
         稳中求进: 2932,
         战略性新兴产业: 2477,
-        扩大消费: 2878,
         新型举国体制: 5433,
-        亲清政商关系: 5247,
+        医疗保险: 5247,
         住房保障: 2896,
         呵护未成年人: 2571,
         扫黑除恶: 1551,
@@ -100,7 +103,6 @@ export default defineComponent({
         节能: 120,
         人民就是江山: 2206,
         人民民主: 3501,
-        五年: 3501,
         民主: 3501,
         三个务必: 3501,
         三件大事: 3501,
@@ -124,15 +126,13 @@ export default defineComponent({
         两步走: 1819,
         平安中国: 2821,
         三大攻坚战: 1176,
-        听党指挥: 1186,
         牢记使命: 1046,
         绿水青山: 1771,
         四个自信: 1724,
-        四个伟大: 276,
-        四个意识: 188,
+        四个伟大: 876,
+        四个意识: 888,
         两个维护: 481,
         五位一体: 255,
-        三严三实: 840,
         中国梦: 1781,
         中国影响力: 1277,
         历史周期律: 1590,
@@ -145,15 +145,12 @@ export default defineComponent({
         一国两制: 897,
         完善生育支持政策体系: 800,
         反独促统: 3826,
-        能源: 2217,
-        打虎: 2353,
-        猎狐: 2353,
-        拍蝇: 2353,
-        减排: 2399,
-        反腐: 2388,
-        i: 200,
-        love: 300,
-        china: 500,
+        能源: 1217,
+        打虎: 1353,
+        猎狐: 1353,
+        拍蝇: 1353,
+        减排: 1399,
+        反腐: 1388,
       }
 
       var data: ChartsData[] = []
@@ -166,10 +163,30 @@ export default defineComponent({
       }
 
       let option = {
+        backgroundColor: '#FFF1BA',
+        color: [
+          '#f59657',
+          '#FF0000',
+          '#ff0000',
+          '#fe0000',
+          '#fd0000',
+          '#fc0000',
+          '#fb0000',
+          '#fa0000',
+          '#f90000',
+          '#f80000',
+          '#f70000',
+          '#f60000',
+          '#f50000',
+          '#f40000',
+          '#f30000',
+          '#f20000',
+          '#f10000',
+        ],
         series: [
           {
             type: 'wordCloud',
-            color: ['#DC2C1C', '#E45331', ' #f59657', '#FF0000', 'red'],
+            // color: ['#DC2C1C', '#E45331', ' #f59657', '#FF0000', 'red'],
             sizeRange: [4, 150],
             rotationRange: [0, 0],
             gridSize: 0,
@@ -194,7 +211,8 @@ export default defineComponent({
             },
             emphasis: {
               textStyle: {
-                color: '#528',
+                color: '#FF0000',
+                // color: '#528',
               },
             },
             data: data.sort(function (a, b) {
@@ -221,7 +239,8 @@ export default defineComponent({
 <template>
   <div class="echarts-word-container">
     <div class="echarts-word-title">
-      <h1>近五年关键字——热词</h1>
+      <!-- <h1>近五年关键字——热词</h1> -->
+      <h1>近三届党代会报告关键字—热词</h1>
     </div>
     <div
       id="echartsWord"
@@ -233,24 +252,26 @@ export default defineComponent({
       <p>祖国统一</p>
     </div>
     <div class="territory hainai">
-      <p>社会主义</p>
-      <p>和平发展</p>
-      <p>党的领导</p>
+      <p>社会保障</p>
+      <p>理想信念</p>
+      <p>人民军队</p>
+      <!-- <p>党的领导</p> -->
     </div>
   </div>
 </template>
 
 <style lang="less">
 .echarts-word-container {
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0;
   // border: 1px solid red;
   min-height: 860px;
   position: relative;
+  background-color: #fff1ba;
 
   .echarts-word-title {
-    margin-top: 50px;
+    // padding-top: 50px;
     text-align: center;
 
     h1 {
@@ -259,6 +280,10 @@ export default defineComponent({
       margin: 0 auto;
     }
   }
+}
+
+#echartsWord {
+  position: relative;
 }
 
 .territory {
@@ -280,11 +305,12 @@ export default defineComponent({
 }
 
 .taiwan {
-  bottom: 15vw;
-  left: calc((155vw - 100px) / 2);
+  bottom: 28vh;
+  left: calc((158vw - 100px) / 2);
 }
+
 .hainai {
-  bottom: 5vw;
+  bottom: 5vh;
   left: calc((120vw - 100px) / 2);
 }
 </style>
