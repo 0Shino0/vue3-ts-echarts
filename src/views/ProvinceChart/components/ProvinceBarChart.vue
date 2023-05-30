@@ -85,6 +85,13 @@ export default defineComponent({
     }
 
     const setOptions = () => {
+      // var test = '123'
+      // const t: any = {
+      //   黑龙江: [1, 2, 3],
+      // }
+
+      // t[test]
+
       let option = {
         title: {
           text: props.mapNameObj!.name + '能源消耗',
